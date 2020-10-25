@@ -1,0 +1,1984 @@
+Last login: Sat Oct 24 23:32:33 on ttys001
+➜  ~ cd Documents/Personal/MSDS/498/week\ 06/cfex/cdk-lambda-dynamodb-fargate/cdk_lambda_dynamodb_fargate 
+➜  cdk_lambda_dynamodb_fargate git:(master) ✗ ls
+__init__.py                  cdk_lambda_dynamodb_stack.py
+➜  cdk_lambda_dynamodb_fargate git:(master) ✗ cd ..
+➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano requirements.txt 
+➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano requirements.txt
+➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cd .. 
+➜  cfex cd cdk-lambda-dynamodb-fargate/ls -la
+cd: string not in pwd: cdk-lambda-dynamodb-fargate/ls
+➜  cfex cd cdk-lambda-dynamodb-fargate/ls -la
+cd: string not in pwd: cdk-lambda-dynamodb-fargate/ls
+➜  cfex cd cdk-lambda-dynamodb-fargate/      
+➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  13 stevedepp  staff   416 Oct 24 23:39 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 24 22:49 ..
+drwxr-xr-x   7 stevedepp  staff   224 Oct 24 23:40 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 24 22:16 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 24 22:16 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 24 22:16 README.md
+-rw-r--r--   1 stevedepp  staff   252 Oct 24 23:40 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 24 22:16 cdk.json
+drwxr-xr-x   2 stevedepp  staff    64 Oct 24 23:39 cdk.out
+drwxr-xr-x   4 stevedepp  staff   128 Oct 24 22:36 cdk_lambda_dynamodb_fargate
+-rw-r--r--   1 stevedepp  staff    14 Oct 25 00:00 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 24 22:16 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 24 22:16 source.bat
+➜  cdk-lambda-dynamodb-fargate git:(master) ✗ source .env/bin/activate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ipython
+Python 3.8.6 (v3.8.6:db455296be, Sep 23 2020, 13:31:39) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.18.1 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from aws_cdk import core
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+<ipython-input-1-d4d39df43cbf> in <module>
+----> 1 from aws_cdk import core
+
+ModuleNotFoundError: No module named 'aws_cdk'
+
+In [2]: from aws-cdk import core
+  File "<ipython-input-2-60e97c2ae8b3>", line 1
+    from aws-cdk import core
+            ^
+SyntaxError: invalid syntax
+
+
+In [3]: exit
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pip3 install aws_cdk
+ERROR: Could not find a version that satisfies the requirement aws_cdk (from versions: none)
+ERROR: No matching distribution found for aws_cdk
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pip install aws_cdk
+ERROR: Could not find a version that satisfies the requirement aws_cdk (from versions: none)
+ERROR: No matching distribution found for aws_cdk
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat app.py 
+#!/usr/bin/env python3
+
+from aws-cdk import core
+
+from cdk_lambda_dynamodb_fargate.cdk_lambda_dynamodb_fargate_stack import CdkLambdaDynamodbFargateStack
+
+
+app = core.App()
+CdkLambdaDynamodbFargateStack(app, "cdk-lambda-dynamodb-fargate")
+
+app.synth()
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cd ..
+(.env) ➜  cfex ls -la
+total 0
+drwxr-xr-x    5 stevedepp  staff   160 Oct 24 22:49 .
+drwxr-xr-x    9 stevedepp  staff   288 Oct 24 21:21 ..
+drwxr-xr-x   17 stevedepp  staff   544 Oct 24 22:47 aws-cdk-examples
+drwxr-xr-x   13 stevedepp  staff   416 Oct 24 23:39 cdk-lambda-dynamodb-fargate
+drwxr-xr-x  120 stevedepp  staff  3840 Oct 24 22:49 examples
+(.env) ➜  cfex cd ..  
+(.env) ➜  week 06 rm -rf cfex
+(.env) ➜  week 06 npm install cdk -g
+/usr/local/bin/cdk -> /usr/local/lib/node_modules/cdk/bin/cdk
++ cdk@1.70.0
+updated 1 package in 10.253s
+(.env) ➜  week 06 mkdir cfex
+(.env) ➜  week 06 ls -la
+total 5168
+drwxr-xr-x   9 stevedepp  staff      288 Oct 25 00:09 .
+drwxr-xr-x  26 stevedepp  staff      832 Oct 21 12:35 ..
+drwxr-xr-x   6 stevedepp  staff      192 Oct 24 21:12 .venv
+-rw-r--r--@  1 stevedepp  staff   134390 Jun 24 21:53 6.00.30 9.0 Data Engineering with Python and AWS Lambda LiveLessons [Video] copy.pdf
+-rw-r--r--@  1 stevedepp  staff      375 Sep 14 20:42 6.00.40 Chapter 13 Python for DevOps Serverless.rtf
+-rwxrwxrwx@  1 stevedepp  staff  2503866 Apr  6  2020 6.00.50 GIft Pragmatic AI Cloud AI Development with Amazon Web Services - Pragmatic AI: An Introduction to Cloud-Based Machine Learning, First Edition.pdf
+drwxr-xr-x   2 stevedepp  staff       64 Oct 25 00:09 cfex
+drwxr-xr-x  25 stevedepp  staff      800 Oct 24 13:40 ctex
+drwxr-xr-x   3 stevedepp  staff       96 Oct 20 19:06 samex
+(.env) ➜  week 06 rm -rf cfex
+(.env) ➜  week 06 ls
+6.00.30 9.0 Data Engineering with Python and AWS Lambda LiveLessons [Video] copy.pdf
+6.00.40 Chapter 13 Python for DevOps Serverless.rtf
+6.00.50 GIft Pragmatic AI Cloud AI Development with Amazon Web Services - Pragmatic AI: An Introduction to Cloud-Based Machine Learning, First Edition.pdf
+ctex
+samex
+(.env) ➜  week 06 ls -la
+total 5168
+drwxr-xr-x   8 stevedepp  staff      256 Oct 25 00:09 .
+drwxr-xr-x  26 stevedepp  staff      832 Oct 21 12:35 ..
+drwxr-xr-x   6 stevedepp  staff      192 Oct 24 21:12 .venv
+-rw-r--r--@  1 stevedepp  staff   134390 Jun 24 21:53 6.00.30 9.0 Data Engineering with Python and AWS Lambda LiveLessons [Video] copy.pdf
+-rw-r--r--@  1 stevedepp  staff      375 Sep 14 20:42 6.00.40 Chapter 13 Python for DevOps Serverless.rtf
+-rwxrwxrwx@  1 stevedepp  staff  2503866 Apr  6  2020 6.00.50 GIft Pragmatic AI Cloud AI Development with Amazon Web Services - Pragmatic AI: An Introduction to Cloud-Based Machine Learning, First Edition.pdf
+drwxr-xr-x  25 stevedepp  staff      800 Oct 24 13:40 ctex
+drwxr-xr-x   3 stevedepp  staff       96 Oct 20 19:06 samex
+(.env) ➜  week 06 mkdir cfex
+(.env) ➜  week 06 cd cfex
+(.env) ➜  cfex ls -la
+total 0
+drwxr-xr-x  2 stevedepp  staff   64 Oct 25 00:09 .
+drwxr-xr-x  9 stevedepp  staff  288 Oct 25 00:09 ..
+(.env) ➜  cfex npm install cdk -g
+/usr/local/bin/cdk -> /usr/local/lib/node_modules/cdk/bin/cdk
++ cdk@1.70.0
+updated 1 package in 0.651s
+(.env) ➜  cfex mkdir cdk-lambda-dynamodb-fargate
+(.env) ➜  cfex cd cdk-lambda-dynamodb-fargate 
+(.env) ➜  cdk-lambda-dynamodb-fargate cdk init app --language=python
+Applying project template app for python
+
+# Welcome to your CDK Python project!
+
+This is a blank project for Python development with CDK.
+
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+This project is set up like a standard Python project.  The initialization
+process also creates a virtualenv within this project, stored under the .env
+directory.  To create the virtualenv it assumes that there is a `python3`
+(or `python` for Windows) executable in your path with access to the `venv`
+package. If for any reason the automatic creation of the virtualenv fails,
+you can create the virtualenv manually.
+
+To manually create a virtualenv on MacOS and Linux:
+
+```
+$ python3 -m venv .env
+```
+
+After the init process completes and the virtualenv is created, you can use the following
+step to activate your virtualenv.
+
+```
+$ source .env/bin/activate
+```
+
+If you are a Windows platform, you would activate the virtualenv like this:
+
+```
+% .env\Scripts\activate.bat
+```
+
+Once the virtualenv is activated, you can install the required dependencies.
+
+```
+$ pip install -r requirements.txt
+```
+
+At this point you can now synthesize the CloudFormation template for this code.
+
+```
+$ cdk synth
+```
+
+To add additional dependencies, for example other CDK libraries, just add
+them to your `setup.py` file and rerun the `pip install -r requirements.txt`
+command.
+
+## Useful commands
+
+ * `cdk ls`          list all stacks in the app
+ * `cdk synth`       emits the synthesized CloudFormation template
+ * `cdk deploy`      deploy this stack to your default AWS account/region
+ * `cdk diff`        compare deployed stack with current state
+ * `cdk docs`        open CDK documentation
+
+Enjoy!
+
+Initializing a new git repository...
+Please run 'python3 -m venv .env'!
+Executing Creating virtualenv...
+✅ All done!
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) cat app.py 
+#!/usr/bin/env python3
+
+from aws_cdk import core
+
+from cdk_lambda_dynamodb_fargate.cdk_lambda_dynamodb_fargate_stack import CdkLambdaDynamodbFargateStack
+
+
+app = core.App()
+CdkLambdaDynamodbFargateStack(app, "cdk-lambda-dynamodb-fargate")
+
+app.synth()
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) cat cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_fargate_stack.py 
+from aws_cdk import core
+
+
+class CdkLambdaDynamodbFargateStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        # The code that defines your stack goes here
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) cat app
+cat: app: No such file or directory
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ls
+README.md                   requirements.txt
+app.py                      setup.py
+cdk.json                    source.bat
+cdk_lambda_dynamodb_fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) can app.py 
+zsh: command not found: can
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) cat app.py 
+#!/usr/bin/env python3
+
+from aws_cdk import core
+
+from cdk_lambda_dynamodb_fargate.cdk_lambda_dynamodb_fargate_stack import CdkLambdaDynamodbFargateStack
+
+
+app = core.App()
+CdkLambdaDynamodbFargateStack(app, "cdk-lambda-dynamodb-fargate")
+
+app.synth()
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) nano app.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_fargate_stack.py 
+from aws_cdk import core
+
+
+class CdkLambdaDynamodbFargateStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        # The code that defines your stack goes here
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_fargate_stack.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ mv cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py         
+usage: mv [-f | -i | -n] [-v] source target
+       mv [-f | -i | -n] [-v] source ... directory
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ mv cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_fargate_stack.py cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls cdk_lambda_dynamodb_fargate
+__init__.py                  cdk_lambda_dynamodb_stack.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ source .env/bin/activate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cd ..
+(.env) ➜  cfex cd ..
+(.env) ➜  week 06 cd cfex 
+(.env) ➜  cfex git clone https://github.com/aws-samples/aws-cdk-examples
+Cloning into 'aws-cdk-examples'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 3066 (delta 2), reused 1 (delta 0), pack-reused 3056
+Receiving objects: 100% (3066/3066), 43.38 MiB | 2.74 MiB/s, done.
+Resolving deltas: 100% (1518/1518), done.
+(.env) ➜  cfex git clone https://github.com/serverless/examples
+Cloning into 'examples'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 6560 (delta 3), reused 4 (delta 2), pack-reused 6550
+Receiving objects: 100% (6560/6560), 11.07 MiB | 3.21 MiB/s, done.
+Resolving deltas: 100% (3429/3429), done.
+(.env) ➜  cfex ls -la
+total 0
+drwxr-xr-x    5 stevedepp  staff   160 Oct 25 00:34 .
+drwxr-xr-x    9 stevedepp  staff   288 Oct 25 00:09 ..
+drwxr-xr-x   17 stevedepp  staff   544 Oct 25 00:34 aws-cdk-examples
+drwxr-xr-x   12 stevedepp  staff   384 Oct 25 00:11 cdk-lambda-dynamodb-fargate
+drwxr-xr-x  120 stevedepp  staff  3840 Oct 25 00:34 examples
+(.env) ➜  cfex cd examples/aws-python-rest-api-with-dynamodb 
+(.env) ➜  aws-python-rest-api-with-dynamodb git:(master) pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/examples/aws-python-rest-api-with-dynamodb
+(.env) ➜  aws-python-rest-api-with-dynamodb git:(master) nano serverless.yml 
+(.env) ➜  aws-python-rest-api-with-dynamodb git:(master) ✗ serverless deploy
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Service files not changed. Skipping deployment...
+Service Information
+service: serverless-rest-api-with-dynamodb
+stage: dev
+region: us-east-1
+stack: serverless-rest-api-with-dynamodb-dev
+resources: 35
+api keys:
+  None
+endpoints:
+  POST - https://935hxeco1l.execute-api.us-east-1.amazonaws.com/dev/todos
+  GET - https://935hxeco1l.execute-api.us-east-1.amazonaws.com/dev/todos
+  GET - https://935hxeco1l.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
+  PUT - https://935hxeco1l.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
+  DELETE - https://935hxeco1l.execute-api.us-east-1.amazonaws.com/dev/todos/{id}
+functions:
+  create: serverless-rest-api-with-dynamodb-dev-create
+  list: serverless-rest-api-with-dynamodb-dev-list
+  get: serverless-rest-api-with-dynamodb-dev-get
+  update: serverless-rest-api-with-dynamodb-dev-update
+  delete: serverless-rest-api-with-dynamodb-dev-delete
+layers:
+  None
+(.env) ➜  aws-python-rest-api-with-dynamodb git:(master) ✗ cd ..
+(.env) ➜  examples git:(master) ✗ cd ..
+(.env) ➜  cfex ls -la
+total 0
+drwxr-xr-x    5 stevedepp  staff   160 Oct 25 00:34 .
+drwxr-xr-x    9 stevedepp  staff   288 Oct 25 00:09 ..
+drwxr-xr-x   17 stevedepp  staff   544 Oct 25 00:34 aws-cdk-examples
+drwxr-xr-x   12 stevedepp  staff   384 Oct 25 00:11 cdk-lambda-dynamodb-fargate
+drwxr-xr-x  120 stevedepp  staff  3840 Oct 25 00:34 examples
+(.env) ➜  cfex cd cdk-lambda-dynamodb-fargate 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   222 Oct 25 00:23 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   4 stevedepp  staff   128 Oct 25 00:29 cdk_lambda_dynamodb_fargate
+-rw-r--r--   1 stevedepp  staff     5 Oct 25 00:11 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano requirements.txt 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pip install -r requirements.txt
+Obtaining file:///Users/stevedepp/Documents/Personal/MSDS/498/week%2006/cfex/cdk-lambda-dynamodb-fargate (from -r requirements.txt (line 1))
+Collecting aws-cdk.core
+  Using cached aws_cdk.core-1.70.0-py3-none-any.whl (780 kB)
+Collecting aws-cdk.aws-dynamodb
+  Downloading aws_cdk.aws_dynamodb-1.70.0-py3-none-any.whl (104 kB)
+     |████████████████████████████████| 104 kB 1.2 MB/s 
+Collecting publication>=0.0.3
+  Downloading publication-0.0.3-py2.py3-none-any.whl (7.7 kB)
+Collecting aws-cdk.cloud-assembly-schema==1.70.0
+  Downloading aws_cdk.cloud_assembly_schema-1.70.0-py3-none-any.whl (106 kB)
+     |████████████████████████████████| 106 kB 3.5 MB/s 
+Collecting aws-cdk.cx-api==1.70.0
+  Downloading aws_cdk.cx_api-1.70.0-py3-none-any.whl (99 kB)
+     |████████████████████████████████| 99 kB 4.0 MB/s 
+Collecting aws-cdk.region-info==1.70.0
+  Downloading aws_cdk.region_info-1.70.0-py3-none-any.whl (56 kB)
+     |████████████████████████████████| 56 kB 4.1 MB/s 
+Collecting jsii<2.0.0,>=1.13.0
+  Downloading jsii-1.13.0-py3-none-any.whl (266 kB)
+     |████████████████████████████████| 266 kB 3.3 MB/s 
+Collecting constructs<4.0.0,>=3.0.4
+  Downloading constructs-3.1.3-py3-none-any.whl (57 kB)
+     |████████████████████████████████| 57 kB 14.6 MB/s 
+Collecting aws-cdk.aws-kms==1.70.0
+  Downloading aws_cdk.aws_kms-1.70.0-py3-none-any.whl (57 kB)
+     |████████████████████████████████| 57 kB 11.2 MB/s 
+Collecting aws-cdk.aws-iam==1.70.0
+  Downloading aws_cdk.aws_iam-1.70.0-py3-none-any.whl (223 kB)
+     |████████████████████████████████| 223 kB 3.8 MB/s 
+Collecting aws-cdk.aws-lambda==1.70.0
+  Downloading aws_cdk.aws_lambda-1.70.0-py3-none-any.whl (262 kB)
+     |████████████████████████████████| 262 kB 2.5 MB/s 
+Collecting aws-cdk.custom-resources==1.70.0
+  Downloading aws_cdk.custom_resources-1.70.0-py3-none-any.whl (94 kB)
+     |████████████████████████████████| 94 kB 2.6 MB/s 
+Collecting aws-cdk.aws-applicationautoscaling==1.70.0
+  Downloading aws_cdk.aws_applicationautoscaling-1.70.0-py3-none-any.whl (99 kB)
+     |████████████████████████████████| 99 kB 2.7 MB/s 
+Collecting aws-cdk.aws-cloudwatch==1.70.0
+  Downloading aws_cdk.aws_cloudwatch-1.70.0-py3-none-any.whl (180 kB)
+     |████████████████████████████████| 180 kB 2.1 MB/s 
+Collecting cattrs~=1.0
+  Downloading cattrs-1.0.0-py2.py3-none-any.whl (14 kB)
+Collecting typing-extensions~=3.7
+  Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting python-dateutil
+  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting attrs~=20.1
+  Using cached attrs-20.2.0-py2.py3-none-any.whl (48 kB)
+Collecting aws-cdk.aws-logs==1.70.0
+  Downloading aws_cdk.aws_logs-1.70.0-py3-none-any.whl (102 kB)
+     |████████████████████████████████| 102 kB 3.2 MB/s 
+Collecting aws-cdk.aws-codeguruprofiler==1.70.0
+  Downloading aws_cdk.aws_codeguruprofiler-1.70.0-py3-none-any.whl (31 kB)
+Collecting aws-cdk.aws-sqs==1.70.0
+  Downloading aws_cdk.aws_sqs-1.70.0-py3-none-any.whl (61 kB)
+     |████████████████████████████████| 61 kB 4.7 MB/s 
+Collecting aws-cdk.aws-efs==1.70.0
+  Downloading aws_cdk.aws_efs-1.70.0-py3-none-any.whl (63 kB)
+     |████████████████████████████████| 63 kB 3.6 MB/s 
+Collecting aws-cdk.aws-events==1.70.0
+  Downloading aws_cdk.aws_events-1.70.0-py3-none-any.whl (109 kB)
+     |████████████████████████████████| 109 kB 4.3 MB/s 
+Collecting aws-cdk.aws-s3==1.70.0
+  Downloading aws_cdk.aws_s3-1.70.0-py3-none-any.whl (214 kB)
+     |████████████████████████████████| 214 kB 4.3 MB/s 
+Collecting aws-cdk.aws-ec2==1.70.0
+  Downloading aws_cdk.aws_ec2-1.70.0-py3-none-any.whl (818 kB)
+     |████████████████████████████████| 818 kB 3.3 MB/s 
+Collecting aws-cdk.aws-s3-assets==1.70.0
+  Downloading aws_cdk.aws_s3_assets-1.70.0-py3-none-any.whl (32 kB)
+Collecting aws-cdk.aws-cloudformation==1.70.0
+  Downloading aws_cdk.aws_cloudformation-1.70.0-py3-none-any.whl (59 kB)
+     |████████████████████████████████| 59 kB 4.8 MB/s 
+Collecting aws-cdk.aws-sns==1.70.0
+  Downloading aws_cdk.aws_sns-1.70.0-py3-none-any.whl (68 kB)
+     |████████████████████████████████| 68 kB 3.1 MB/s 
+Collecting aws-cdk.aws-autoscaling-common==1.70.0
+  Downloading aws_cdk.aws_autoscaling_common-1.70.0-py3-none-any.whl (26 kB)
+Collecting six>=1.5
+  Using cached six-1.15.0-py2.py3-none-any.whl (10 kB)
+Collecting aws-cdk.assets==1.70.0
+  Downloading aws_cdk.assets-1.70.0-py3-none-any.whl (16 kB)
+Collecting aws-cdk.aws-ssm==1.70.0
+  Downloading aws_cdk.aws_ssm-1.70.0-py3-none-any.whl (117 kB)
+     |████████████████████████████████| 117 kB 2.6 MB/s 
+Installing collected packages: publication, attrs, cattrs, typing-extensions, six, python-dateutil, jsii, aws-cdk.cloud-assembly-schema, aws-cdk.cx-api, aws-cdk.region-info, constructs, aws-cdk.core, aws-cdk.aws-iam, aws-cdk.aws-kms, aws-cdk.assets, aws-cdk.aws-events, aws-cdk.aws-s3, aws-cdk.aws-s3-assets, aws-cdk.aws-cloudwatch, aws-cdk.aws-logs, aws-cdk.aws-codeguruprofiler, aws-cdk.aws-sqs, aws-cdk.aws-ssm, aws-cdk.aws-ec2, aws-cdk.aws-efs, aws-cdk.aws-autoscaling-common, aws-cdk.aws-applicationautoscaling, aws-cdk.aws-lambda, aws-cdk.aws-sns, aws-cdk.aws-cloudformation, aws-cdk.custom-resources, aws-cdk.aws-dynamodb, cdk-lambda-dynamodb-fargate
+  Running setup.py develop for cdk-lambda-dynamodb-fargate
+Successfully installed attrs-20.2.0 aws-cdk.assets-1.70.0 aws-cdk.aws-applicationautoscaling-1.70.0 aws-cdk.aws-autoscaling-common-1.70.0 aws-cdk.aws-cloudformation-1.70.0 aws-cdk.aws-cloudwatch-1.70.0 aws-cdk.aws-codeguruprofiler-1.70.0 aws-cdk.aws-dynamodb-1.70.0 aws-cdk.aws-ec2-1.70.0 aws-cdk.aws-efs-1.70.0 aws-cdk.aws-events-1.70.0 aws-cdk.aws-iam-1.70.0 aws-cdk.aws-kms-1.70.0 aws-cdk.aws-lambda-1.70.0 aws-cdk.aws-logs-1.70.0 aws-cdk.aws-s3-1.70.0 aws-cdk.aws-s3-assets-1.70.0 aws-cdk.aws-sns-1.70.0 aws-cdk.aws-sqs-1.70.0 aws-cdk.aws-ssm-1.70.0 aws-cdk.cloud-assembly-schema-1.70.0 aws-cdk.core-1.70.0 aws-cdk.custom-resources-1.70.0 aws-cdk.cx-api-1.70.0 aws-cdk.region-info-1.70.0 cattrs-1.0.0 cdk-lambda-dynamodb-fargate constructs-3.1.3 jsii-1.13.0 publication-0.0.3 python-dateutil-2.8.1 six-1.15.0 typing-extensions-3.7.4.3
+WARNING: You are using pip version 20.2.1; however, version 20.2.4 is available.
+You should consider upgrading via the '/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/bin/python3 -m pip install --upgrade pip' command.
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk synth
+Traceback (most recent call last):
+  File "app.py", line 9, in <module>
+    CdkLambdaDynamodbStack(app, "cdk-lambda-dynamodb")
+  File "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_runtime.py", line 69, in __call__
+    inst = super().__call__(*args, **kwargs)
+  File "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py", line 10, in __init__
+    table = aws_dynamodb.Table(self, "Table",
+NameError: name 'aws_dynamodb' is not defined
+Subprocess exited with error 1
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls                        
+README.md                   cdk_lambda_dynamodb_fargate
+app.py                      requirements.txt
+cdk.json                    setup.py
+cdk.out                     source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls cdk_lambda_dynamodb_fargate
+__init__.py                          cdk_lambda_dynamodb_fargate.egg-info
+__pycache__                          cdk_lambda_dynamodb_stack.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py 
+from aws_cdk import core
+
+
+class CdkLambdaDynamodbStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+	# define the table stores Todo items
+        table = aws_dynamodb.Table(self, "Table",
+                                    partition_key=aws_dynamodb.Attribute(
+                                      name="id",
+                                      type=aws_dynamodb.AttributeType.STRING),
+                                    read_capacity=10,
+                                    write_capacity=5)
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk synth
+Resources:
+  TableCD117FA1:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      ProvisionedThroughput:
+        ReadCapacityUnits: 10
+        WriteCapacityUnits: 5
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: cdk-lambda-dynamodb/Table/Resource
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Modules: aws-cdk=1.70.0,@aws-cdk/assets=1.70.0,@aws-cdk/aws-applicationautoscaling=1.70.0,@aws-cdk/aws-autoscaling-common=1.70.0,@aws-cdk/aws-cloudformation=1.70.0,@aws-cdk/aws-cloudwatch=1.70.0,@aws-cdk/aws-codeguruprofiler=1.70.0,@aws-cdk/aws-dynamodb=1.70.0,@aws-cdk/aws-ec2=1.70.0,@aws-cdk/aws-efs=1.70.0,@aws-cdk/aws-events=1.70.0,@aws-cdk/aws-iam=1.70.0,@aws-cdk/aws-kms=1.70.0,@aws-cdk/aws-lambda=1.70.0,@aws-cdk/aws-logs=1.70.0,@aws-cdk/aws-s3=1.70.0,@aws-cdk/aws-s3-assets=1.70.0,@aws-cdk/aws-sns=1.70.0,@aws-cdk/aws-sqs=1.70.0,@aws-cdk/aws-ssm=1.70.0,@aws-cdk/cloud-assembly-schema=1.70.0,@aws-cdk/core=1.70.0,@aws-cdk/custom-resources=1.70.0,@aws-cdk/cx-api=1.70.0,@aws-cdk/region-info=1.70.0,jsii-runtime=Python/3.8.6
+    Metadata:
+      aws:cdk:path: cdk-lambda-dynamodb/CDKMetadata/Default
+    Condition: CDKMetadataAvailable
+Conditions:
+  CDKMetadataAvailable:
+    Fn::Or:
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ca-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-northwest-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-central-1
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-3
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - me-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - sa-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-2
+
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ app_env = {"region": "us-east-1"}
+zsh: parse error near `}'
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  13 stevedepp  staff   416 Oct 25 00:46 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   222 Oct 25 00:23 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:55 cdk.out
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:46 cdk_lambda_dynamodb_fargate
+-rw-r--r--   1 stevedepp  staff    39 Oct 25 00:42 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano app.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk synth
+Resources:
+  TableCD117FA1:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      ProvisionedThroughput:
+        ReadCapacityUnits: 10
+        WriteCapacityUnits: 5
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:
+      aws:cdk:path: cdk-lambda-dynamodb/Table/Resource
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Modules: aws-cdk=1.70.0,@aws-cdk/assets=1.70.0,@aws-cdk/aws-applicationautoscaling=1.70.0,@aws-cdk/aws-autoscaling-common=1.70.0,@aws-cdk/aws-cloudformation=1.70.0,@aws-cdk/aws-cloudwatch=1.70.0,@aws-cdk/aws-codeguruprofiler=1.70.0,@aws-cdk/aws-dynamodb=1.70.0,@aws-cdk/aws-ec2=1.70.0,@aws-cdk/aws-efs=1.70.0,@aws-cdk/aws-events=1.70.0,@aws-cdk/aws-iam=1.70.0,@aws-cdk/aws-kms=1.70.0,@aws-cdk/aws-lambda=1.70.0,@aws-cdk/aws-logs=1.70.0,@aws-cdk/aws-s3=1.70.0,@aws-cdk/aws-s3-assets=1.70.0,@aws-cdk/aws-sns=1.70.0,@aws-cdk/aws-sqs=1.70.0,@aws-cdk/aws-ssm=1.70.0,@aws-cdk/cloud-assembly-schema=1.70.0,@aws-cdk/core=1.70.0,@aws-cdk/custom-resources=1.70.0,@aws-cdk/cx-api=1.70.0,@aws-cdk/region-info=1.70.0,jsii-runtime=Python/3.8.6
+    Metadata:
+      aws:cdk:path: cdk-lambda-dynamodb/CDKMetadata/Default
+
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy
+cdk-lambda-dynamodb: deploying...
+cdk-lambda-dynamodb: creating CloudFormation changeset...
+[██████████████████████████████████████████████████████████] (3/3)
+
+
+
+
+
+
+ ✅  cdk-lambda-dynamodb
+
+Stack ARN:
+arn:aws:cloudformation:us-east-1:606363841935:stack/cdk-lambda-dynamodb/011dfea0-1680-11eb-86b4-0e5865a953f1
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cd ..
+(.env) ➜  cfex ls -la
+total 0
+drwxr-xr-x    5 stevedepp  staff   160 Oct 25 00:34 .
+drwxr-xr-x    9 stevedepp  staff   288 Oct 25 00:09 ..
+drwxr-xr-x   17 stevedepp  staff   544 Oct 25 00:34 aws-cdk-examples
+drwxr-xr-x   13 stevedepp  staff   416 Oct 25 00:46 cdk-lambda-dynamodb-fargate
+drwxr-xr-x  120 stevedepp  staff  3840 Oct 25 00:34 examples
+(.env) ➜  cfex cd cdk-lambda-dynamodb-fargate 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la ../examples/aws-python-rest-api-with-dynamodb/todos 
+total 48
+drwxr-xr-x  9 stevedepp  staff   288 Oct 25 00:34 .
+drwxr-xr-x  8 stevedepp  staff   256 Oct 25 00:37 ..
+-rw-r--r--  1 stevedepp  staff     0 Oct 25 00:34 __init__.py
+-rw-r--r--  1 stevedepp  staff   774 Oct 25 00:34 create.py
+-rw-r--r--  1 stevedepp  staff   288 Oct 25 00:34 decimalencoder.py
+-rw-r--r--  1 stevedepp  staff   386 Oct 25 00:34 delete.py
+-rw-r--r--  1 stevedepp  staff   535 Oct 25 00:34 get.py
+-rw-r--r--  1 stevedepp  staff   434 Oct 25 00:34 list.py
+-rw-r--r--  1 stevedepp  staff  1240 Oct 25 00:34 update.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  13 stevedepp  staff   416 Oct 25 00:46 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   268 Oct 25 01:05 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:55 cdk.out
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:46 cdk_lambda_dynamodb_fargate
+-rw-r--r--   1 stevedepp  staff    39 Oct 25 00:42 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ mkdir lambda
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la ../examples/aws-python-rest-api-with-dynamodb/todos
+total 48
+drwxr-xr-x  9 stevedepp  staff   288 Oct 25 00:34 .
+drwxr-xr-x  8 stevedepp  staff   256 Oct 25 00:37 ..
+-rw-r--r--  1 stevedepp  staff     0 Oct 25 00:34 __init__.py
+-rw-r--r--  1 stevedepp  staff   774 Oct 25 00:34 create.py
+-rw-r--r--  1 stevedepp  staff   288 Oct 25 00:34 decimalencoder.py
+-rw-r--r--  1 stevedepp  staff   386 Oct 25 00:34 delete.py
+-rw-r--r--  1 stevedepp  staff   535 Oct 25 00:34 get.py
+-rw-r--r--  1 stevedepp  staff   434 Oct 25 00:34 list.py
+-rw-r--r--  1 stevedepp  staff  1240 Oct 25 00:34 update.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cp ../examples/aws-python-rest-api-with-dynamodb/todos/* lambda
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la lambda 
+total 48
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 .
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 ..
+-rw-r--r--   1 stevedepp  staff     0 Oct 25 01:29 __init__.py
+-rw-r--r--   1 stevedepp  staff   774 Oct 25 01:29 create.py
+-rw-r--r--   1 stevedepp  staff   288 Oct 25 01:29 decimalencoder.py
+-rw-r--r--   1 stevedepp  staff   386 Oct 25 01:29 delete.py
+-rw-r--r--   1 stevedepp  staff   535 Oct 25 01:29 get.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 01:29 list.py
+-rw-r--r--   1 stevedepp  staff  1240 Oct 25 01:29 update.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   268 Oct 25 01:05 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:55 cdk.out
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:46 cdk_lambda_dynamodb_fargate
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 lambda
+-rw-r--r--   1 stevedepp  staff    39 Oct 25 00:42 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano requirements.txt
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   268 Oct 25 01:05 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:55 cdk.out
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:46 cdk_lambda_dynamodb_fargate
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 lambda
+-rw-r--r--   1 stevedepp  staff    81 Oct 25 01:33 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano requirements.txt 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pip install -r requirements.txt
+Obtaining file:///Users/stevedepp/Documents/Personal/MSDS/498/week%2006/cfex/cdk-lambda-dynamodb-fargate (from -r requirements.txt (line 1))
+Requirement already satisfied: aws-cdk.core in ./.env/lib/python3.8/site-packages (from -r requirements.txt (line 2)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-dynamodb in ./.env/lib/python3.8/site-packages (from -r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-lambda in ./.env/lib/python3.8/site-packages (from -r requirements.txt (line 4)) (1.70.0)
+Collecting aws-cdk.aws-apigateway
+  Downloading aws_cdk.aws_apigateway-1.70.0-py3-none-any.whl (491 kB)
+     |████████████████████████████████| 491 kB 1.5 MB/s 
+Requirement already satisfied: publication>=0.0.3 in ./.env/lib/python3.8/site-packages (from aws-cdk.core->-r requirements.txt (line 2)) (0.0.3)
+Requirement already satisfied: aws-cdk.cloud-assembly-schema==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.core->-r requirements.txt (line 2)) (1.70.0)
+Requirement already satisfied: aws-cdk.region-info==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.core->-r requirements.txt (line 2)) (1.70.0)
+Requirement already satisfied: constructs<4.0.0,>=3.0.4 in ./.env/lib/python3.8/site-packages (from aws-cdk.core->-r requirements.txt (line 2)) (3.1.3)
+Requirement already satisfied: aws-cdk.cx-api==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.core->-r requirements.txt (line 2)) (1.70.0)
+Requirement already satisfied: jsii<2.0.0,>=1.13.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.core->-r requirements.txt (line 2)) (1.13.0)
+Requirement already satisfied: aws-cdk.aws-applicationautoscaling==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-kms==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-iam==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-cloudwatch==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.custom-resources==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-sqs==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-events==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-s3==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-efs==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-s3-assets==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-codeguruprofiler==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-ec2==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-logs==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Requirement already satisfied: aws-cdk.assets==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-apigateway->-r requirements.txt (line 5)) (1.70.0)
+Collecting aws-cdk.aws-elasticloadbalancingv2==1.70.0
+  Downloading aws_cdk.aws_elasticloadbalancingv2-1.70.0-py3-none-any.whl (288 kB)
+     |████████████████████████████████| 288 kB 4.2 MB/s 
+Collecting aws-cdk.aws-certificatemanager==1.70.0
+  Downloading aws_cdk.aws_certificatemanager-1.70.0-py3-none-any.whl (233 kB)
+     |████████████████████████████████| 233 kB 4.1 MB/s 
+Requirement already satisfied: typing-extensions~=3.7 in ./.env/lib/python3.8/site-packages (from jsii<2.0.0,>=1.13.0->aws-cdk.core->-r requirements.txt (line 2)) (3.7.4.3)
+Requirement already satisfied: python-dateutil in ./.env/lib/python3.8/site-packages (from jsii<2.0.0,>=1.13.0->aws-cdk.core->-r requirements.txt (line 2)) (2.8.1)
+Requirement already satisfied: attrs~=20.1 in ./.env/lib/python3.8/site-packages (from jsii<2.0.0,>=1.13.0->aws-cdk.core->-r requirements.txt (line 2)) (20.2.0)
+Requirement already satisfied: cattrs~=1.0 in ./.env/lib/python3.8/site-packages (from jsii<2.0.0,>=1.13.0->aws-cdk.core->-r requirements.txt (line 2)) (1.0.0)
+Requirement already satisfied: aws-cdk.aws-autoscaling-common==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-applicationautoscaling==1.70.0->aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-cloudformation==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.custom-resources==1.70.0->aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-sns==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.custom-resources==1.70.0->aws-cdk.aws-dynamodb->-r requirements.txt (line 3)) (1.70.0)
+Requirement already satisfied: aws-cdk.aws-ssm==1.70.0 in ./.env/lib/python3.8/site-packages (from aws-cdk.aws-ec2==1.70.0->aws-cdk.aws-lambda->-r requirements.txt (line 4)) (1.70.0)
+Collecting aws-cdk.aws-route53==1.70.0
+  Downloading aws_cdk.aws_route53-1.70.0-py3-none-any.whl (89 kB)
+     |████████████████████████████████| 89 kB 3.1 MB/s 
+Requirement already satisfied: six>=1.5 in ./.env/lib/python3.8/site-packages (from python-dateutil->jsii<2.0.0,>=1.13.0->aws-cdk.core->-r requirements.txt (line 2)) (1.15.0)
+Installing collected packages: aws-cdk.aws-route53, aws-cdk.aws-certificatemanager, aws-cdk.aws-elasticloadbalancingv2, aws-cdk.aws-apigateway, cdk-lambda-dynamodb-fargate
+  Attempting uninstall: cdk-lambda-dynamodb-fargate
+    Found existing installation: cdk-lambda-dynamodb-fargate 0.0.1
+    Uninstalling cdk-lambda-dynamodb-fargate-0.0.1:
+      Successfully uninstalled cdk-lambda-dynamodb-fargate-0.0.1
+  Running setup.py develop for cdk-lambda-dynamodb-fargate
+Successfully installed aws-cdk.aws-apigateway-1.70.0 aws-cdk.aws-certificatemanager-1.70.0 aws-cdk.aws-elasticloadbalancingv2-1.70.0 aws-cdk.aws-route53-1.70.0 cdk-lambda-dynamodb-fargate
+WARNING: You are using pip version 20.2.1; however, version 20.2.4 is available.
+You should consider upgrading via the '/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/bin/python3 -m pip install --upgrade pip' command.
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy
+This deployment will make potentially sensitive changes according to your current security approval level (--require-approval broadening).
+Please confirm you intend to make the following modifications:
+
+IAM Statement Changes
+┌───┬───────────────┬────────┬───────────────┬───────────────┬────────────────┐
+│   │ Resource      │ Effect │ Action        │ Principal     │ Condition      │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoLis │                │
+│   │               │        │ hGetItem      │ tFunction/Ser │                │
+│   │               │        │ dynamodb:Batc │ viceRole}     │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoCre │                │
+│   │               │        │ hGetItem      │ ateFunction/S │                │
+│   │               │        │ dynamodb:Batc │ erviceRole}   │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoGet │                │
+│   │               │        │ hGetItem      │ Function/Serv │                │
+│   │               │        │ dynamodb:Batc │ iceRole}      │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoUpd │                │
+│   │               │        │ hGetItem      │ ateFunction/S │                │
+│   │               │        │ dynamodb:Batc │ erviceRole}   │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoDel │                │
+│   │               │        │ hGetItem      │ eteFunction/S │                │
+│   │               │        │ dynamodb:Batc │ erviceRole}   │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoApi/Clo │ Allow  │ sts:AssumeRol │ Service:apiga │                │
+│   │ udWatchRole.A │        │ e             │ teway.amazona │                │
+│   │ rn}           │        │               │ ws.com        │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoCreateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/POST/todo │
+│   │               │        │               │               │ s"             │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoCreateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/P │
+│   │               │        │               │               │ OST/todos"     │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoCreateF │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ unction/Servi │        │ e             │ a.amazonaws.c │                │
+│   │ ceRole.Arn}   │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoDeleteF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/DELETE/to │
+│   │               │        │               │               │ dos/*"         │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoDeleteF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/D │
+│   │               │        │               │               │ ELETE/todos/*" │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoDeleteF │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ unction/Servi │        │ e             │ a.amazonaws.c │                │
+│   │ ceRole.Arn}   │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoGetFunc │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ tion.Arn}     │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/GET/todos │
+│   │               │        │               │               │ /*"            │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoGetFunc │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ tion.Arn}     │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/G │
+│   │               │        │               │               │ ET/todos/*"    │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoGetFunc │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ tion/ServiceR │        │ e             │ a.amazonaws.c │                │
+│   │ ole.Arn}      │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/*/"       │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/* │
+│   │               │        │               │               │ /"             │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/GET/todos │
+│   │               │        │               │               │ "              │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/G │
+│   │               │        │               │               │ ET/todos"      │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoListFun │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ ction/Service │        │ e             │ a.amazonaws.c │                │
+│   │ Role.Arn}     │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoUpdateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/PUT/todos │
+│   │               │        │               │               │ /*"            │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoUpdateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/P │
+│   │               │        │               │               │ UT/todos/*"    │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoUpdateF │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ unction/Servi │        │ e             │ a.amazonaws.c │                │
+│   │ ceRole.Arn}   │        │               │ om            │                │
+└───┴───────────────┴────────┴───────────────┴───────────────┴────────────────┘
+IAM Policy Changes
+┌───┬────────────────────────────────────┬────────────────────────────────────┐
+│   │ Resource                           │ Managed Policy ARN                 │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoApi/CloudWatchRole}          │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AmazonAPIGatewayP │
+│   │                                    │ ushToCloudWatchLogs                │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoCreateFunction/ServiceRole}  │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoDeleteFunction/ServiceRole}  │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoGetFunction/ServiceRole}     │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoListFunction/ServiceRole}    │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoUpdateFunction/ServiceRole}  │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+└───┴────────────────────────────────────┴────────────────────────────────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Do you wish to deploy these changes (y/n)? y
+cdk-lambda-dynamodb: deploying...
+
+ ❌  cdk-lambda-dynamodb failed: Error: This stack uses assets, so the toolkit stack must be deployed to the environment (Run "cdk bootstrap aws://unknown-account/us-east-1")
+    at Object.addMetadataAssetsToManifest (/usr/local/lib/node_modules/cdk/node_modules/aws-cdk/lib/assets.ts:27:11)
+    at Object.deployStack (/usr/local/lib/node_modules/cdk/node_modules/aws-cdk/lib/api/deploy-stack.ts:207:29)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at CdkToolkit.deploy (/usr/local/lib/node_modules/cdk/node_modules/aws-cdk/lib/cdk-toolkit.ts:180:24)
+    at initCommandLine (/usr/local/lib/node_modules/cdk/node_modules/aws-cdk/bin/cdk.ts:197:9)
+This stack uses assets, so the toolkit stack must be deployed to the environment (Run "cdk bootstrap aws://unknown-account/us-east-1")
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk bootstrap
+ ⏳  Bootstrapping environment aws://606363841935/us-east-1...
+CDKToolkit: creating CloudFormation changeset...
+[██████████████████████████████████████████████████████████] (3/3)
+
+
+
+ ✅  Environment aws://606363841935/us-east-1 bootstrapped.
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy
+This deployment will make potentially sensitive changes according to your current security approval level (--require-approval broadening).
+Please confirm you intend to make the following modifications:
+
+IAM Statement Changes
+┌───┬───────────────┬────────┬───────────────┬───────────────┬────────────────┐
+│   │ Resource      │ Effect │ Action        │ Principal     │ Condition      │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoLis │                │
+│   │               │        │ hGetItem      │ tFunction/Ser │                │
+│   │               │        │ dynamodb:Batc │ viceRole}     │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoCre │                │
+│   │               │        │ hGetItem      │ ateFunction/S │                │
+│   │               │        │ dynamodb:Batc │ erviceRole}   │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoGet │                │
+│   │               │        │ hGetItem      │ Function/Serv │                │
+│   │               │        │ dynamodb:Batc │ iceRole}      │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoUpd │                │
+│   │               │        │ hGetItem      │ ateFunction/S │                │
+│   │               │        │ dynamodb:Batc │ erviceRole}   │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+│ + │ ${Table.Arn}  │ Allow  │ dynamodb:Batc │ AWS:${TodoDel │                │
+│   │               │        │ hGetItem      │ eteFunction/S │                │
+│   │               │        │ dynamodb:Batc │ erviceRole}   │                │
+│   │               │        │ hWriteItem    │               │                │
+│   │               │        │ dynamodb:Dele │               │                │
+│   │               │        │ teItem        │               │                │
+│   │               │        │ dynamodb:GetI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:GetR │               │                │
+│   │               │        │ ecords        │               │                │
+│   │               │        │ dynamodb:GetS │               │                │
+│   │               │        │ hardIterator  │               │                │
+│   │               │        │ dynamodb:PutI │               │                │
+│   │               │        │ tem           │               │                │
+│   │               │        │ dynamodb:Quer │               │                │
+│   │               │        │ y             │               │                │
+│   │               │        │ dynamodb:Scan │               │                │
+│   │               │        │ dynamodb:Upda │               │                │
+│   │               │        │ teItem        │               │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoApi/Clo │ Allow  │ sts:AssumeRol │ Service:apiga │                │
+│   │ udWatchRole.A │        │ e             │ teway.amazona │                │
+│   │ rn}           │        │               │ ws.com        │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoCreateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/POST/todo │
+│   │               │        │               │               │ s"             │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoCreateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/P │
+│   │               │        │               │               │ OST/todos"     │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoCreateF │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ unction/Servi │        │ e             │ a.amazonaws.c │                │
+│   │ ceRole.Arn}   │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoDeleteF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/DELETE/to │
+│   │               │        │               │               │ dos/*"         │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoDeleteF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/D │
+│   │               │        │               │               │ ELETE/todos/*" │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoDeleteF │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ unction/Servi │        │ e             │ a.amazonaws.c │                │
+│   │ ceRole.Arn}   │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoGetFunc │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ tion.Arn}     │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/GET/todos │
+│   │               │        │               │               │ /*"            │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoGetFunc │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ tion.Arn}     │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/G │
+│   │               │        │               │               │ ET/todos/*"    │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoGetFunc │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ tion/ServiceR │        │ e             │ a.amazonaws.c │                │
+│   │ ole.Arn}      │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/*/"       │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/* │
+│   │               │        │               │               │ /"             │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/GET/todos │
+│   │               │        │               │               │ "              │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoListFun │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ ction.Arn}    │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/G │
+│   │               │        │               │               │ ET/todos"      │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoListFun │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ ction/Service │        │ e             │ a.amazonaws.c │                │
+│   │ Role.Arn}     │        │               │ om            │                │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoUpdateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/${Tod │
+│   │               │        │               │               │ oApiDeployment │
+│   │               │        │               │               │ Stageprod8FC29 │
+│   │               │        │               │               │ 74F}/PUT/todos │
+│   │               │        │               │               │ /*"            │
+│   │               │        │               │               │ }              │
+│ + │ ${TodoUpdateF │ Allow  │ lambda:Invoke │ Service:apiga │ "ArnLike": {   │
+│   │ unction.Arn}  │        │ Function      │ teway.amazona │   "AWS:SourceA │
+│   │               │        │               │ ws.com        │ rn": "arn:${AW │
+│   │               │        │               │               │ S::Partition}: │
+│   │               │        │               │               │ execute-api:us │
+│   │               │        │               │               │ -east-1:${AWS: │
+│   │               │        │               │               │ :AccountId}:${ │
+│   │               │        │               │               │ TodoApi}/test- │
+│   │               │        │               │               │ invoke-stage/P │
+│   │               │        │               │               │ UT/todos/*"    │
+│   │               │        │               │               │ }              │
+├───┼───────────────┼────────┼───────────────┼───────────────┼────────────────┤
+│ + │ ${TodoUpdateF │ Allow  │ sts:AssumeRol │ Service:lambd │                │
+│   │ unction/Servi │        │ e             │ a.amazonaws.c │                │
+│   │ ceRole.Arn}   │        │               │ om            │                │
+└───┴───────────────┴────────┴───────────────┴───────────────┴────────────────┘
+IAM Policy Changes
+┌───┬────────────────────────────────────┬────────────────────────────────────┐
+│   │ Resource                           │ Managed Policy ARN                 │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoApi/CloudWatchRole}          │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AmazonAPIGatewayP │
+│   │                                    │ ushToCloudWatchLogs                │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoCreateFunction/ServiceRole}  │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoDeleteFunction/ServiceRole}  │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoGetFunction/ServiceRole}     │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoListFunction/ServiceRole}    │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+├───┼────────────────────────────────────┼────────────────────────────────────┤
+│ + │ ${TodoUpdateFunction/ServiceRole}  │ arn:${AWS::Partition}:iam::aws:pol │
+│   │                                    │ icy/service-role/AWSLambdaBasicExe │
+│   │                                    │ cutionRole                         │
+└───┴────────────────────────────────────┴────────────────────────────────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Do you wish to deploy these changes (y/n)? n
+Aborted by user
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy
+This deployment will make potentially sensitive changes according to your current security approval level (--require-approval broadening).
+Please confirm you intend to make the following modifications:
+
+IAM Statement Changes
+┌───┬─────────────────────────────────┬────────┬─────────────────────────────────┬─────────────────────────────────┬─────────────────────────────────┐
+│   │ Resource                        │ Effect │ Action                          │ Principal                       │ Condition                       │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${Table.Arn}                    │ Allow  │ dynamodb:BatchGetItem           │ AWS:${TodoListFunction/ServiceR │                                 │
+│   │                                 │        │ dynamodb:BatchWriteItem         │ ole}                            │                                 │
+│   │                                 │        │ dynamodb:DeleteItem             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:GetRecords             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetShardIterator       │                                 │                                 │
+│   │                                 │        │ dynamodb:PutItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:Query                  │                                 │                                 │
+│   │                                 │        │ dynamodb:Scan                   │                                 │                                 │
+│   │                                 │        │ dynamodb:UpdateItem             │                                 │                                 │
+│ + │ ${Table.Arn}                    │ Allow  │ dynamodb:BatchGetItem           │ AWS:${TodoCreateFunction/Servic │                                 │
+│   │                                 │        │ dynamodb:BatchWriteItem         │ eRole}                          │                                 │
+│   │                                 │        │ dynamodb:DeleteItem             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:GetRecords             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetShardIterator       │                                 │                                 │
+│   │                                 │        │ dynamodb:PutItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:Query                  │                                 │                                 │
+│   │                                 │        │ dynamodb:Scan                   │                                 │                                 │
+│   │                                 │        │ dynamodb:UpdateItem             │                                 │                                 │
+│ + │ ${Table.Arn}                    │ Allow  │ dynamodb:BatchGetItem           │ AWS:${TodoGetFunction/ServiceRo │                                 │
+│   │                                 │        │ dynamodb:BatchWriteItem         │ le}                             │                                 │
+│   │                                 │        │ dynamodb:DeleteItem             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:GetRecords             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetShardIterator       │                                 │                                 │
+│   │                                 │        │ dynamodb:PutItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:Query                  │                                 │                                 │
+│   │                                 │        │ dynamodb:Scan                   │                                 │                                 │
+│   │                                 │        │ dynamodb:UpdateItem             │                                 │                                 │
+│ + │ ${Table.Arn}                    │ Allow  │ dynamodb:BatchGetItem           │ AWS:${TodoUpdateFunction/Servic │                                 │
+│   │                                 │        │ dynamodb:BatchWriteItem         │ eRole}                          │                                 │
+│   │                                 │        │ dynamodb:DeleteItem             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:GetRecords             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetShardIterator       │                                 │                                 │
+│   │                                 │        │ dynamodb:PutItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:Query                  │                                 │                                 │
+│   │                                 │        │ dynamodb:Scan                   │                                 │                                 │
+│   │                                 │        │ dynamodb:UpdateItem             │                                 │                                 │
+│ + │ ${Table.Arn}                    │ Allow  │ dynamodb:BatchGetItem           │ AWS:${TodoDeleteFunction/Servic │                                 │
+│   │                                 │        │ dynamodb:BatchWriteItem         │ eRole}                          │                                 │
+│   │                                 │        │ dynamodb:DeleteItem             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:GetRecords             │                                 │                                 │
+│   │                                 │        │ dynamodb:GetShardIterator       │                                 │                                 │
+│   │                                 │        │ dynamodb:PutItem                │                                 │                                 │
+│   │                                 │        │ dynamodb:Query                  │                                 │                                 │
+│   │                                 │        │ dynamodb:Scan                   │                                 │                                 │
+│   │                                 │        │ dynamodb:UpdateItem             │                                 │                                 │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoApi/CloudWatchRole.Arn}   │ Allow  │ sts:AssumeRole                  │ Service:apigateway.amazonaws.co │                                 │
+│   │                                 │        │                                 │ m                               │                                 │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoCreateFunction.Arn}       │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ ${TodoApiDeploymentStageprod8FC │
+│   │                                 │        │                                 │                                 │ 2974F}/POST/todos"              │
+│   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoCreateFunction.Arn}       │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ test-invoke-stage/POST/todos"   │
+│   │                                 │        │                                 │                                 │ }                               │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoCreateFunction/ServiceRol │ Allow  │ sts:AssumeRole                  │ Service:lambda.amazonaws.com    │                                 │
+│   │ e.Arn}                          │        │                                 │                                 │                                 │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoDeleteFunction.Arn}       │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ ${TodoApiDeploymentStageprod8FC │
+│   │                                 │        │                                 │                                 │ 2974F}/DELETE/todos/*"          │
+│   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoDeleteFunction.Arn}       │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ test-invoke-stage/DELETE/todos/ │
+│   │                                 │        │                                 │                                 │ *"                              │
+│   │                                 │        │                                 │                                 │ }                               │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoDeleteFunction/ServiceRol │ Allow  │ sts:AssumeRole                  │ Service:lambda.amazonaws.com    │                                 │
+│   │ e.Arn}                          │        │                                 │                                 │                                 │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoGetFunction.Arn}          │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ ${TodoApiDeploymentStageprod8FC │
+│   │                                 │        │                                 │                                 │ 2974F}/GET/todos/*"             │
+│   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoGetFunction.Arn}          │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ test-invoke-stage/GET/todos/*"  │
+│   │                                 │        │                                 │                                 │ }                               │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoGetFunction/ServiceRole.A │ Allow  │ sts:AssumeRole                  │ Service:lambda.amazonaws.com    │                                 │
+│   │ rn}                             │        │                                 │                                 │                                 │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoListFunction.Arn}         │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ ${TodoApiDeploymentStageprod8FC │
+│   │                                 │        │                                 │                                 │ 2974F}/*/"                      │
+│   │                                 │        │                             │   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoListFunction.Arn}         │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ test-invoke-stage/*/"           │
+│   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoListFunction.Arn}         │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ ${TodoApiDeploymentStageprod8FC │
+│   │                                 │        │                                 │                                 │ 2974F}/GET/todos"               │
+│   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoListFunction.Arn}         │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ test-invoke-stage/GET/todos"    │
+│   │                                 │        │                                 │                                 │ }                               │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoListFunction/ServiceRole. │ Allow  │ sts:AssumeRole                  │ Service:lambda.amazonaws.com    │                                 │
+│   │ Arn}                            │        │                                 │                                 │                                 │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoUpdateFunction.Arn}       │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ ${TodoApiDeploymentStageprod8FC │
+│   │                                 │        │                                 │                                 │ 2974F}/PUT/todos/*"             │
+│   │                                 │        │                                 │                                 │ }                               │
+│ + │ ${TodoUpdateFunction.Arn}       │ Allow  │ lambda:InvokeFunction           │ Service:apigateway.amazonaws.co │ "ArnLike": {                    │
+│   │                                 │        │                                 │ m                               │   "AWS:SourceArn": "arn:${AWS:: │
+│   │                                 │        │                                 │                                 │ Partition}:execute-api:us-east- │
+│   │                                 │        │                                 │                                 │ 1:${AWS::AccountId}:${TodoApi}/ │
+│   │                                 │        │                                 │                                 │ test-invoke-stage/PUT/todos/*"  │
+│   │                                 │        │                                 │                                 │ }                               │
+├───┼─────────────────────────────────┼────────┼─────────────────────────────────┼─────────────────────────────────┼─────────────────────────────────┤
+│ + │ ${TodoUpdateFunction/ServiceRol │ Allow  │ sts:AssumeRole                  │ Service:lambda.amazonaws.com    │                                 │
+│   │ e.Arn}                          │        │                                 │                                 │                                 │
+└───┴─────────────────────────────────┴────────┴─────────────────────────────────┴─────────────────────────────────┴─────────────────────────────────┘
+IAM Policy Changes
+┌───┬───────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────┐
+│   │ Resource                          │ Managed Policy ARN                                                                      │
+├───┼───────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${TodoApi/CloudWatchRole}         │ arn:${AWS::Partition}:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs │
+├───┼───────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${TodoCreateFunction/ServiceRole} │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole          │
+├───┼───────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${TodoDeleteFunction/ServiceRole} │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole          │
+├───┼───────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${TodoGetFunction/ServiceRole}    │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole          │
+├───┼───────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${TodoListFunction/ServiceRole}   │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole          │
+├───┼───────────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────┤
+│ + │ ${TodoUpdateFunction/ServiceRole} │ arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole          │
+└───┴───────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────┘
+(NOTE: There may be security-related changes not in this list. See https://github.com/aws/aws-cdk/issues/1299)
+
+Do you wish to deploy these changes (y/n)? y
+cdk-lambda-dynamodb: deploying...
+[0%] start: Publishing 9210d88132b98272e89ec784b7cd331aaa30fcc1f62c0bed07278d138de69524:current
+[100%] success: Published 9210d88132b98272e89ec784b7cd331aaa30fcc1f62c0bed07278d138de69524:current
+cdk-lambda-dynamodb: creating CloudFormation changeset...
+[███████████████▏··········································] (11/42)
+
+2:09:52 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack  | cdk-lambda-dynamodb
+2:10:50 AM | CREATE_IN_PROGRESS   | AWS::IAM::Policy            | TodoCreateFunction...Role/DefaultPo
+[██████████████████████····································] (16/42)
+
+2:09:52 AM | UPDATE_IN_PROGRESS   | AWS::CloudFormation::Stack  | cdk-lambda-dynamodb
+[██████████████████████████████████████████████████████████] (42/42)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ✅  cdk-lambda-dynamodb
+
+Outputs:
+cdk-lambda-dynamodb.TodoApiEndpointC1E16B6C = https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/
+
+Stack ARN:
+arn:aws:cloudformation:us-east-1:606363841935:stack/cdk-lambda-dynamodb/011dfea0-1680-11eb-86b4-0e5865a953f1
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ (((.env) ➜  cdk-lambda-dynamodb-fargate git:(master) (.env) ➜(.env)(.en(.en(.en(.(.en(.(.(.en(.en(.(.(.(.(.(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X POST  https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos --data '{"text": "Learn CDK"}'
+{"id": "981d1516-168a-11eb-bef5-5222b32cbf65", "text": "Learn CDK", "checked": false, "createdAt": "1603607007.6601098", "updatedAt": "1603607007.6601098"}%    (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X POST  https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos --data '{"text": "Learn CDKwith Python"}'
+
+{"id": "cc7bdd9c-168a-11eb-bef5-5222b32cbf65", "text": "Learn CDKwith Python", "checked": false, "createdAt": "1603607095.6879487", "updatedAt": "1603607095.6879487"}%                                                                         (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗  curl -X POST  https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos/cc7bdd9c-168a-11eb-bef5-5222b32cbf65
+{"message":"Missing Authentication Token"}%                                     (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗  curl https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos/cc7bdd9c-168a-11eb-bef5-5222b32cbf65         
+{"message": "Internal server error"}%                                           (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano cdk_lambda_dynamodb_fargate/cdk_lambda_dynamodb_stack.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   268 Oct 25 01:05 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   8 stevedepp  staff   256 Oct 25 02:09 cdk.out
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:46 cdk_lambda_dynamodb_fargate
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 lambda
+-rw-r--r--   1 stevedepp  staff    81 Oct 25 01:34 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la lambda
+total 48
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 .
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 ..
+-rw-r--r--   1 stevedepp  staff     0 Oct 25 01:29 __init__.py
+-rw-r--r--   1 stevedepp  staff   774 Oct 25 01:29 create.py
+-rw-r--r--   1 stevedepp  staff   288 Oct 25 01:29 decimalencoder.py
+-rw-r--r--   1 stevedepp  staff   386 Oct 25 01:29 delete.py
+-rw-r--r--   1 stevedepp  staff   535 Oct 25 01:29 get.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 01:29 list.py
+-rw-r--r--   1 stevedepp  staff  1240 Oct 25 01:29 update.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat get.py
+cat: get.py: No such file or directory
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ pwd
+/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la
+total 56
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 .
+drwxr-xr-x   5 stevedepp  staff   160 Oct 25 00:34 ..
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:11 .env
+drwxr-xr-x  12 stevedepp  staff   384 Oct 25 00:11 .git
+-rw-r--r--   1 stevedepp  staff   118 Oct 25 00:11 .gitignore
+-rw-r--r--   1 stevedepp  staff  1652 Oct 25 00:11 README.md
+-rw-r--r--   1 stevedepp  staff   268 Oct 25 01:05 app.py
+-rw-r--r--   1 stevedepp  staff   194 Oct 25 00:11 cdk.json
+drwxr-xr-x   8 stevedepp  staff   256 Oct 25 02:09 cdk.out
+drwxr-xr-x   6 stevedepp  staff   192 Oct 25 00:46 cdk_lambda_dynamodb_fargate
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 lambda
+-rw-r--r--   1 stevedepp  staff    81 Oct 25 01:34 requirements.txt
+-rw-r--r--   1 stevedepp  staff  1088 Oct 25 00:11 setup.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 00:11 source.bat
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ ls -la lambda
+total 48
+drwxr-xr-x   9 stevedepp  staff   288 Oct 25 01:29 .
+drwxr-xr-x  14 stevedepp  staff   448 Oct 25 01:28 ..
+-rw-r--r--   1 stevedepp  staff     0 Oct 25 01:29 __init__.py
+-rw-r--r--   1 stevedepp  staff   774 Oct 25 01:29 create.py
+-rw-r--r--   1 stevedepp  staff   288 Oct 25 01:29 decimalencoder.py
+-rw-r--r--   1 stevedepp  staff   386 Oct 25 01:29 delete.py
+-rw-r--r--   1 stevedepp  staff   535 Oct 25 01:29 get.py
+-rw-r--r--   1 stevedepp  staff   434 Oct 25 01:29 list.py
+-rw-r--r--   1 stevedepp  staff  1240 Oct 25 01:29 update.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat lambda/get.py 
+import os
+import json
+
+from todos import decimalencoder
+import boto3
+dynamodb = boto3.resource('dynamodb')
+
+
+def get(event, context):
+    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+
+    # fetch todo from the database
+    result = table.get_item(
+        Key={
+            'id': event['pathParameters']['id']
+        }
+    )
+
+    # create a response
+    response = {
+        "statusCode": 200,
+        "body": json.dumps(result['Item'],
+                           cls=decimalencoder.DecimalEncoder)
+    }
+
+    return response
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/get.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat lambda/get.py 
+import os
+import json
+
+import decimalencoder
+import boto3
+dynamodb = boto3.resource('dynamodb')
+
+
+def get(event, context):
+    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+
+    # fetch todo from the database
+    result = table.get_item(
+        Key={
+            'id': event['pathParameters']['id']
+        }
+    )
+
+    # create a response
+    response = {
+        "statusCode": 200,
+        "body": json.dumps(result['Item'],
+                           cls=decimalencoder.DecimalEncoder)
+    }
+
+    return response
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy
+cdk-lambda-dynamodb: deploying...
+[0%] start: Publishing 098017f5f220b6bdbe72a3f63ebb865cc702bdecce4f45131fc4f1fdd0350eb3:current
+[100%] success: Published 098017f5f220b6bdbe72a3f63ebb865cc702bdecce4f45131fc4f1fdd0350eb3:current
+cdk-lambda-dynamodb: creating CloudFormation changeset...
+[██████████████▌···········································] (6/24)
+
+
+
+
+
+
+ ✅  cdk-lambda-dynamodb
+
+Outputs:
+cdk-lambda-dynamodb.TodoApiEndpointC1E16B6C = https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/
+
+Stack ARN:
+arn:aws:cloudformation:us-east-1:606363841935:stack/cdk-lambda-dynamodb/011dfea0-1680-11eb-86b4-0e5865a953f1
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos/cc7bdd9c-168a-11eb-bef5-5222b32cbf65 
+{"checked": false, "createdAt": "1603607095.6879487", "text": "Learn CDKwith Python", "id": "cc7bdd9c-168a-11eb-bef5-5222b32cbf65", "updatedAt": "1603607095.6879487"}%                                                                         (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cat lambda/update.py 
+import json
+import time
+import logging
+import os
+
+from todos import decimalencoder
+import boto3
+dynamodb = boto3.resource('dynamodb')
+
+
+def update(event, context):
+    data = json.loads(event['body'])
+    if 'text' not in data or 'checked' not in data:
+        logging.error("Validation Failed")
+        raise Exception("Couldn't update the todo item.")
+        return
+
+    timestamp = int(time.time() * 1000)
+
+    table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
+
+    # update the todo in the database
+    result = table.update_item(
+        Key={
+            'id': event['pathParameters']['id']
+        },
+        ExpressionAttributeNames={
+          '#todo_text': 'text',
+        },
+        ExpressionAttributeValues={
+          ':text': data['text'],
+          ':checked': data['checked'],
+          ':updatedAt': timestamp,
+        },
+        UpdateExpression='SET #todo_text = :text, '
+                         'checked = :checked, '
+                         'updatedAt = :updatedAt',
+        ReturnValues='ALL_NEW',
+    )
+
+    # create a response
+    response = {
+        "statusCode": 200,
+        "body": json.dumps(result['Attributes'],
+                           cls=decimalencoder.DecimalEncoder)
+    }
+
+    return response
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/update.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/list.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/delete.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/create.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy
+cdk-lambda-dynamodb: deploying...
+[0%] start: Publishing d6027663730d08a4e130e5f467647abfee0126d47a1acb6a88a2a87f46bd5fe0:current
+[100%] success: Published d6027663730d08a4e130e5f467647abfee0126d47a1acb6a88a2a87f46bd5fe0:current
+cdk-lambda-dynamodb: creating CloudFormation changeset...
+[██████████████▌···········································] (6/24)
+
+
+
+
+
+
+
+
+
+
+ ✅  cdk-lambda-dynamodb
+
+Outputs:
+cdk-lambda-dynamodb.TodoApiEndpointC1E16B6C = https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/
+
+Stack ARN:
+arn:aws:cloudformation:us-east-1:606363841935:stack/cdk-lambda-dynamodb/011dfea0-1680-11eb-86b4-0e5865a953f1
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/ | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   325  100   325    0     0    319      0  0:00:01  0:00:01 --:--:--   319
+[
+  {
+    "checked": false,
+    "createdAt": "1603607007.6601098",
+    "text": "Learn CDK",
+    "id": "981d1516-168a-11eb-bef5-5222b32cbf65",
+    "updatedAt": "1603607007.6601098"
+  },
+  {
+    "checked": false,
+    "createdAt": "1603607095.6879487",
+    "text": "Learn CDKwith Python",
+    "id": "cc7bdd9c-168a-11eb-bef5-5222b32cbf65",
+    "updatedAt": "1603607095.6879487"
+  }
+]
+  [Bookmarked Oct 25, 2020 at 2:58:13 AM]
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X DELETE https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/981d1516-168a-11eb-bef5-5222b32cbf65
+{"message":"Missing Authentication Token"}%                                     (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/delete.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X DELETE https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/981d1516-168a-11eb-bef5-5222b32cbf65
+{"message":"Missing Authentication Token"}%                                     (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X DELETE https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos/981d1516-168a-11eb-bef5-5222b32cbf65
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/ | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   168  100   168    0     0    462      0 --:--:-- --:--:-- --:--:--   461
+[
+  {
+    "checked": false,
+    "createdAt": "1603607095.6879487",
+    "text": "Learn CDKwith Python",
+    "id": "cc7bdd9c-168a-11eb-bef5-5222b32cbf65",
+    "updatedAt": "1603607095.6879487"
+  }
+]
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X PUT https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos/cc7bdd9c-168a-11eb-bef5-5222b32cbf65 --data '{"text": "Learn CDK with Python by reading the PythonForDevOps book"}'
+{"message": "Internal server error"}%                                           (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/update.py 
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ nano lambda/update.py
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy_
+Usage: cdk -a <cdk-app> COMMAND
+
+Commands:
+  cdk list [STACKS..]             Lists all stacks in the app      [aliases: ls]
+  cdk synthesize [STACKS..]       Synthesizes and prints the CloudFormation
+                                  template for this stack       [aliases: synth]
+  cdk bootstrap [ENVIRONMENTS..]  Deploys the CDK toolkit stack into an AWS
+                                  environment
+  cdk deploy [STACKS..]           Deploys the stack(s) named STACKS into your
+                                  AWS account
+  cdk destroy [STACKS..]          Destroy the stack(s) named STACKS
+  cdk diff [STACKS..]             Compares the specified stack with the deployed
+                                  stack or a local template file, and returns
+                                  with status 1 if any difference is found
+  cdk metadata [STACK]            Returns all metadata associated with this
+                                  stack
+  cdk init [TEMPLATE]             Create a new, empty CDK project from a
+                                  template.
+  cdk context                     Manage cached context values
+  cdk docs                        Opens the reference documentation in a browser
+                                                                  [aliases: doc]
+  cdk doctor                      Check your set-up for potential problems
+
+Options:
+  -a, --app                 REQUIRED: command-line for executing your app or a
+                            cloud assembly directory (e.g. "node bin/my-app.js")
+                                                                        [string]
+  -c, --context             Add contextual string parameter (KEY=VALUE)  [array]
+  -p, --plugin              Name or path of a node package that extend the CDK
+                            features. Can be specified multiple times    [array]
+      --trace               Print trace for stack warnings             [boolean]
+      --strict              Do not construct stacks with warnings      [boolean]
+      --ignore-errors       Ignores synthesis errors, which will likely produce
+                            an invalid output         [boolean] [default: false]
+  -j, --json                Use JSON output instead of YAML when templates are
+                            printed to STDOUT         [boolean] [default: false]
+  -v, --verbose             Show debug logs (specify multiple times to increase
+                            verbosity)                  [count] [default: false]
+      --profile             Use the indicated AWS profile as the default
+                            environment                                 [string]
+      --proxy               Use the indicated proxy. Will read from HTTPS_PROXY
+                            environment variable if not specified.      [string]
+      --ca-bundle-path      Path to CA certificate to use when validating HTTPS
+                            requests. Will read from AWS_CA_BUNDLE environment
+                            variable if not specified.                  [string]
+  -i, --ec2creds            Force trying to fetch EC2 instance credentials.
+                            Default: guess EC2 instance status.        [boolean]
+      --version-reporting   Include the "AWS::CDK::Metadata" resource in
+                            synthesized templates (enabled by default) [boolean]
+      --path-metadata       Include "aws:cdk:path" CloudFormation metadata for
+                            each resource (enabled by default)
+                                                       [boolean] [default: true]
+      --asset-metadata      Include "aws:asset:*" CloudFormation metadata for
+                            resources that user assets (enabled by default)
+                                                       [boolean] [default: true]
+  -r, --role-arn            ARN of Role to use when invoking CloudFormation
+                                                                        [string]
+      --toolkit-stack-name  The name of the CDK toolkit stack           [string]
+      --staging             Copy assets to the output directory (use
+                            --no-staging to disable, needed for local debugging
+                            the source files with SAM CLI)
+                                                       [boolean] [default: true]
+  -o, --output              Emits the synthesized cloud assembly into a
+                            directory (default: cdk.out)                [string]
+      --no-color            Removes colors and other style from console output
+                                                      [boolean] [default: false]
+      --fail                Fail with exit code 1 in case of diff
+                                                      [boolean] [default: false]
+      --version             Show version number                        [boolean]
+  -h, --help                Show help                                  [boolean]
+
+If your app has a single stack, there is no need to specify the stack name
+
+If one of cdk.json or ~/.cdk.json exists, options specified there will be used
+as defaults. Settings in cdk.json take precedence.
+
+Did you mean deploy?
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ cdk deploy 
+cdk-lambda-dynamodb: deploying...
+[0%] start: Publishing 7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9:current
+[100%] success: Published 7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9:current
+cdk-lambda-dynamodb: creating CloudFormation changeset...
+[██████████████▌···········································] (6/24)
+
+
+
+
+ ✅  cdk-lambda-dynamodb
+
+Outputs:
+cdk-lambda-dynamodb.TodoApiEndpointC1E16B6C = https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/
+
+Stack ARN:
+arn:aws:cloudformation:us-east-1:606363841935:stack/cdk-lambda-dynamodb/011dfea0-1680-11eb-86b4-0e5865a953f1
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl -X PUT https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/todos/cc7bdd9c-168a-11eb-bef5-5222b32cbf65 --data '{"text": "Learn CDK with Python by reading the PythonForDevOps book"}'
+{"checked": true, "createdAt": "1603607095.6879487", "text": "Learn CDK with Python by reading the PythonForDevOps book", "id": "cc7bdd9c-168a-11eb-bef5-5222b32cbf65", "updatedAt": 1603610590650}%                                            (.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ curl https://56el90iaxa.execute-api.us-east-1.amazonaws.com/prod/ | jq
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   197  100   197    0     0    224      0 --:--:-- --:--:-- --:--:--   224
+[
+  {
+    "checked": true,
+    "createdAt": "1603607095.6879487",
+    "text": "Learn CDK with Python by reading the PythonForDevOps book",
+    "id": "cc7bdd9c-168a-11eb-bef5-5222b32cbf65",
+    "updatedAt": 1603610590650
+  }
+]
+(.env) ➜  cdk-lambda-dynamodb-fargate git:(master) ✗ 

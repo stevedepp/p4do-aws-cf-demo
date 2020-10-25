@@ -1,0 +1,1885 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "cdk-lambda-dynamodb": {
+        "id": "cdk-lambda-dynamodb",
+        "path": "cdk-lambda-dynamodb",
+        "children": {
+          "Table": {
+            "id": "Table",
+            "path": "cdk-lambda-dynamodb/Table",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/Table/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "id",
+                        "keyType": "HASH"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "id",
+                        "attributeType": "S"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 10,
+                      "writeCapacityUnits": 5
+                    }
+                  }
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "cdk-lambda-dynamodb/Table/ScalingRole"
+              }
+            }
+          },
+          "TodoListFunction": {
+            "id": "TodoListFunction",
+            "path": "cdk-lambda-dynamodb/TodoListFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-lambda-dynamodb/TodoListFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoListFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-lambda-dynamodb/TodoListFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoListFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "TableCD117FA1",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "TodoListFunctionServiceRoleDefaultPolicy558740E5",
+                            "roles": [
+                              {
+                                "Ref": "TodoListFunctionServiceRole65D42543"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-lambda-dynamodb/TodoListFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-lambda-dynamodb/TodoListFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-lambda-dynamodb/TodoListFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/TodoListFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "list.list",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "TodoListFunctionServiceRole65D42543",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.7",
+                    "environment": {
+                      "variables": {
+                        "DYNAMODB_TABLE": {
+                          "Ref": "TableCD117FA1"
+                        }
+                      }
+                    },
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "cdk-lambda-dynamodb/AssetParameters",
+            "children": {
+              "7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9": {
+                "id": "7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9",
+                "path": "cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "TodoCreateFunction": {
+            "id": "TodoCreateFunction",
+            "path": "cdk-lambda-dynamodb/TodoCreateFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-lambda-dynamodb/TodoCreateFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoCreateFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-lambda-dynamodb/TodoCreateFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoCreateFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "TableCD117FA1",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "TodoCreateFunctionServiceRoleDefaultPolicy605F218A",
+                            "roles": [
+                              {
+                                "Ref": "TodoCreateFunctionServiceRoleE08C9518"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-lambda-dynamodb/TodoCreateFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-lambda-dynamodb/TodoCreateFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-lambda-dynamodb/TodoCreateFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/TodoCreateFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "create.create",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "TodoCreateFunctionServiceRoleE08C9518",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.7",
+                    "environment": {
+                      "variables": {
+                        "DYNAMODB_TABLE": {
+                          "Ref": "TableCD117FA1"
+                        }
+                      }
+                    },
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "TodoGetFunction": {
+            "id": "TodoGetFunction",
+            "path": "cdk-lambda-dynamodb/TodoGetFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-lambda-dynamodb/TodoGetFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoGetFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-lambda-dynamodb/TodoGetFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoGetFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "TableCD117FA1",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "TodoGetFunctionServiceRoleDefaultPolicy99709116",
+                            "roles": [
+                              {
+                                "Ref": "TodoGetFunctionServiceRoleDE809B09"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-lambda-dynamodb/TodoGetFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-lambda-dynamodb/TodoGetFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-lambda-dynamodb/TodoGetFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/TodoGetFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "get.get",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "TodoGetFunctionServiceRoleDE809B09",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.7",
+                    "environment": {
+                      "variables": {
+                        "DYNAMODB_TABLE": {
+                          "Ref": "TableCD117FA1"
+                        }
+                      }
+                    },
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "TodoUpdateFunction": {
+            "id": "TodoUpdateFunction",
+            "path": "cdk-lambda-dynamodb/TodoUpdateFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-lambda-dynamodb/TodoUpdateFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoUpdateFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-lambda-dynamodb/TodoUpdateFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoUpdateFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "TableCD117FA1",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "TodoUpdateFunctionServiceRoleDefaultPolicy9FF2CBC7",
+                            "roles": [
+                              {
+                                "Ref": "TodoUpdateFunctionServiceRoleA3E42712"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-lambda-dynamodb/TodoUpdateFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-lambda-dynamodb/TodoUpdateFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-lambda-dynamodb/TodoUpdateFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/TodoUpdateFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "update.update",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "TodoUpdateFunctionServiceRoleA3E42712",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.7",
+                    "environment": {
+                      "variables": {
+                        "DYNAMODB_TABLE": {
+                          "Ref": "TableCD117FA1"
+                        }
+                      }
+                    },
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "TodoDeleteFunction": {
+            "id": "TodoDeleteFunction",
+            "path": "cdk-lambda-dynamodb/TodoDeleteFunction",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "cdk-lambda-dynamodb/TodoDeleteFunction/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoDeleteFunction/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "cdk-lambda-dynamodb/TodoDeleteFunction/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoDeleteFunction/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchGetItem",
+                                    "dynamodb:GetRecords",
+                                    "dynamodb:GetShardIterator",
+                                    "dynamodb:Query",
+                                    "dynamodb:GetItem",
+                                    "dynamodb:Scan",
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "TableCD117FA1",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "TodoDeleteFunctionServiceRoleDefaultPolicy2B5C0290",
+                            "roles": [
+                              {
+                                "Ref": "TodoDeleteFunctionServiceRole2E2FB50F"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "cdk-lambda-dynamodb/TodoDeleteFunction/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "cdk-lambda-dynamodb/TodoDeleteFunction/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "cdk-lambda-dynamodb/TodoDeleteFunction/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/TodoDeleteFunction/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "delete.delete",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "TodoDeleteFunctionServiceRole2E2FB50F",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.7",
+                    "environment": {
+                      "variables": {
+                        "DYNAMODB_TABLE": {
+                          "Ref": "TableCD117FA1"
+                        }
+                      }
+                    },
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "TodoApi": {
+            "id": "TodoApi",
+            "path": "cdk-lambda-dynamodb/TodoApi",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-lambda-dynamodb/TodoApi/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "TodoApi"
+                  }
+                }
+              },
+              "CloudWatchRole": {
+                "id": "CloudWatchRole",
+                "path": "cdk-lambda-dynamodb/TodoApi/CloudWatchRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoApi/CloudWatchRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "apigateway.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Account": {
+                "id": "Account",
+                "path": "cdk-lambda-dynamodb/TodoApi/Account",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
+                  "aws:cdk:cloudformation:props": {
+                    "cloudWatchRoleArn": {
+                      "Fn::GetAtt": [
+                        "TodoApiCloudWatchRoleE8187653",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              },
+              "Deployment": {
+                "id": "Deployment",
+                "path": "cdk-lambda-dynamodb/TodoApi/Deployment",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoApi/Deployment/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "TodoApi145E2E30"
+                        },
+                        "description": "Automatically created by the RestApi construct"
+                      }
+                    }
+                  }
+                }
+              },
+              "DeploymentStage.prod": {
+                "id": "DeploymentStage.prod",
+                "path": "cdk-lambda-dynamodb/TodoApi/DeploymentStage.prod",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-lambda-dynamodb/TodoApi/DeploymentStage.prod/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "TodoApi145E2E30"
+                        },
+                        "deploymentId": {
+                          "Ref": "TodoApiDeployment88898756809b5c43ba94dc514605ade136e00d3f"
+                        },
+                        "stageName": "prod"
+                      }
+                    }
+                  }
+                }
+              },
+              "Endpoint": {
+                "id": "Endpoint",
+                "path": "cdk-lambda-dynamodb/TodoApi/Endpoint"
+              },
+              "Default": {
+                "id": "Default",
+                "path": "cdk-lambda-dynamodb/TodoApi/Default",
+                "children": {
+                  "ANY": {
+                    "id": "ANY",
+                    "path": "cdk-lambda-dynamodb/TodoApi/Default/ANY",
+                    "children": {
+                      "ApiPermission.cdklambdadynamodbTodoApi54673AE0.ANY..": {
+                        "id": "ApiPermission.cdklambdadynamodbTodoApi54673AE0.ANY..",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/ANY/ApiPermission.cdklambdadynamodbTodoApi54673AE0.ANY..",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                          "aws:cdk:cloudformation:props": {
+                            "action": "lambda:InvokeFunction",
+                            "functionName": {
+                              "Fn::GetAtt": [
+                                "TodoListFunctionDE711C4E",
+                                "Arn"
+                              ]
+                            },
+                            "principal": "apigateway.amazonaws.com",
+                            "sourceArn": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":execute-api:us-east-1:",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":",
+                                  {
+                                    "Ref": "TodoApi145E2E30"
+                                  },
+                                  "/",
+                                  {
+                                    "Ref": "TodoApiDeploymentStageprod8FC2974F"
+                                  },
+                                  "/*/"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.ANY..": {
+                        "id": "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.ANY..",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/ANY/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.ANY..",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                          "aws:cdk:cloudformation:props": {
+                            "action": "lambda:InvokeFunction",
+                            "functionName": {
+                              "Fn::GetAtt": [
+                                "TodoListFunctionDE711C4E",
+                                "Arn"
+                              ]
+                            },
+                            "principal": "apigateway.amazonaws.com",
+                            "sourceArn": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":execute-api:us-east-1:",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":",
+                                  {
+                                    "Ref": "TodoApi145E2E30"
+                                  },
+                                  "/test-invoke-stage/*/"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/ANY/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                          "aws:cdk:cloudformation:props": {
+                            "httpMethod": "ANY",
+                            "resourceId": {
+                              "Fn::GetAtt": [
+                                "TodoApi145E2E30",
+                                "RootResourceId"
+                              ]
+                            },
+                            "restApiId": {
+                              "Ref": "TodoApi145E2E30"
+                            },
+                            "authorizationType": "NONE",
+                            "integration": {
+                              "type": "AWS_PROXY",
+                              "uri": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                    {
+                                      "Fn::GetAtt": [
+                                        "TodoListFunctionDE711C4E",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "/invocations"
+                                  ]
+                                ]
+                              },
+                              "integrationHttpMethod": "POST"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "todos": {
+                    "id": "todos",
+                    "path": "cdk-lambda-dynamodb/TodoApi/Default/todos",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                          "aws:cdk:cloudformation:props": {
+                            "parentId": {
+                              "Fn::GetAtt": [
+                                "TodoApi145E2E30",
+                                "RootResourceId"
+                              ]
+                            },
+                            "pathPart": "todos",
+                            "restApiId": {
+                              "Ref": "TodoApi145E2E30"
+                            }
+                          }
+                        }
+                      },
+                      "GET": {
+                        "id": "GET",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/GET",
+                        "children": {
+                          "ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos": {
+                            "id": "ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/GET/ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "TodoListFunctionDE711C4E",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:us-east-1:",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "TodoApi145E2E30"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "TodoApiDeploymentStageprod8FC2974F"
+                                      },
+                                      "/GET/todos"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos": {
+                            "id": "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/GET/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "TodoListFunctionDE711C4E",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:us-east-1:",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "TodoApi145E2E30"
+                                      },
+                                      "/test-invoke-stage/GET/todos"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/GET/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "GET",
+                                "resourceId": {
+                                  "Ref": "TodoApitodos175F9392"
+                                },
+                                "restApiId": {
+                                  "Ref": "TodoApi145E2E30"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "TodoListFunctionDE711C4E",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "POST": {
+                        "id": "POST",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/POST",
+                        "children": {
+                          "ApiPermission.cdklambdadynamodbTodoApi54673AE0.POST..todos": {
+                            "id": "ApiPermission.cdklambdadynamodbTodoApi54673AE0.POST..todos",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/POST/ApiPermission.cdklambdadynamodbTodoApi54673AE0.POST..todos",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "TodoCreateFunction29C0D7EB",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:us-east-1:",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "TodoApi145E2E30"
+                                      },
+                                      "/",
+                                      {
+                                        "Ref": "TodoApiDeploymentStageprod8FC2974F"
+                                      },
+                                      "/POST/todos"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.POST..todos": {
+                            "id": "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.POST..todos",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/POST/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.POST..todos",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                              "aws:cdk:cloudformation:props": {
+                                "action": "lambda:InvokeFunction",
+                                "functionName": {
+                                  "Fn::GetAtt": [
+                                    "TodoCreateFunction29C0D7EB",
+                                    "Arn"
+                                  ]
+                                },
+                                "principal": "apigateway.amazonaws.com",
+                                "sourceArn": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "arn:",
+                                      {
+                                        "Ref": "AWS::Partition"
+                                      },
+                                      ":execute-api:us-east-1:",
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ":",
+                                      {
+                                        "Ref": "TodoApi145E2E30"
+                                      },
+                                      "/test-invoke-stage/POST/todos"
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/POST/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                              "aws:cdk:cloudformation:props": {
+                                "httpMethod": "POST",
+                                "resourceId": {
+                                  "Ref": "TodoApitodos175F9392"
+                                },
+                                "restApiId": {
+                                  "Ref": "TodoApi145E2E30"
+                                },
+                                "authorizationType": "NONE",
+                                "integration": {
+                                  "type": "AWS_PROXY",
+                                  "uri": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "TodoCreateFunction29C0D7EB",
+                                            "Arn"
+                                          ]
+                                        },
+                                        "/invocations"
+                                      ]
+                                    ]
+                                  },
+                                  "integrationHttpMethod": "POST"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "{id}": {
+                        "id": "{id}",
+                        "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                              "aws:cdk:cloudformation:props": {
+                                "parentId": {
+                                  "Ref": "TodoApitodos175F9392"
+                                },
+                                "pathPart": "{id}",
+                                "restApiId": {
+                                  "Ref": "TodoApi145E2E30"
+                                }
+                              }
+                            }
+                          },
+                          "GET": {
+                            "id": "GET",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET",
+                            "children": {
+                              "ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}": {
+                                "id": "ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET/ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "TodoGetFunction382E41FA",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:us-east-1:",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "TodoApi145E2E30"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "TodoApiDeploymentStageprod8FC2974F"
+                                          },
+                                          "/GET/todos/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}": {
+                                "id": "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "TodoGetFunction382E41FA",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:us-east-1:",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "TodoApi145E2E30"
+                                          },
+                                          "/test-invoke-stage/GET/todos/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "GET",
+                                    "resourceId": {
+                                      "Ref": "TodoApitodosid09742A9C"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "TodoApi145E2E30"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "TodoGetFunction382E41FA",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "PUT": {
+                            "id": "PUT",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT",
+                            "children": {
+                              "ApiPermission.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}": {
+                                "id": "ApiPermission.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT/ApiPermission.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "TodoUpdateFunction6CA51568",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:us-east-1:",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "TodoApi145E2E30"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "TodoApiDeploymentStageprod8FC2974F"
+                                          },
+                                          "/PUT/todos/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}": {
+                                "id": "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "TodoUpdateFunction6CA51568",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:us-east-1:",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "TodoApi145E2E30"
+                                          },
+                                          "/test-invoke-stage/PUT/todos/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "PUT",
+                                    "resourceId": {
+                                      "Ref": "TodoApitodosid09742A9C"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "TodoApi145E2E30"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "TodoUpdateFunction6CA51568",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "DELETE": {
+                            "id": "DELETE",
+                            "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE",
+                            "children": {
+                              "ApiPermission.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}": {
+                                "id": "ApiPermission.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE/ApiPermission.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "TodoDeleteFunction33D65E9C",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:us-east-1:",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "TodoApi145E2E30"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "TodoApiDeploymentStageprod8FC2974F"
+                                          },
+                                          "/DELETE/todos/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}": {
+                                "id": "ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "TodoDeleteFunction33D65E9C",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:us-east-1:",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "TodoApi145E2E30"
+                                          },
+                                          "/test-invoke-stage/DELETE/todos/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "DELETE",
+                                    "resourceId": {
+                                      "Ref": "TodoApitodosid09742A9C"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "TodoApi145E2E30"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "TodoDeleteFunction33D65E9C",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "cdk-lambda-dynamodb/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "cdk-lambda-dynamodb/CDKMetadata/Default"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

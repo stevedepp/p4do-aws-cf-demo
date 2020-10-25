@@ -1,0 +1,970 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "cdk-lambda-dynamodb": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "cdk-lambda-dynamodb.template.json"
+      },
+      "metadata": {
+        "/cdk-lambda-dynamodb": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9",
+              "id": "7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9",
+              "packaging": "zip",
+              "sourceHash": "7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9",
+              "s3BucketParameter": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E",
+              "s3KeyParameter": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1",
+              "artifactHashParameter": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9ArtifactHashA9079DCD"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/construct-compat.js:336:62)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:154:29)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:72:25)",
+              "Stack.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack.js:363:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:76:31)",
+              "new Asset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/code.js:165:26)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:84:33)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/Table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableCD117FA1",
+            "trace": [
+              "new Table (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:293:22)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoListFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoListFunctionServiceRole65D42543",
+            "trace": [
+              "new Role (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:66:35)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoListFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoListFunctionServiceRoleDefaultPolicy558740E5",
+            "trace": [
+              "new Policy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Table.combinedGrant (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:230:35)",
+              "Table.grantReadWriteData (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:141:21)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoListFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoListFunctionDE711C4E",
+            "trace": [
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:115:26)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3BucketDCC1032E",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:12:36)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:144:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:72:25)",
+              "Stack.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack.js:363:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:76:31)",
+              "new Asset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/code.js:165:26)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:84:33)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9S3VersionKey5C946BA1",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:16:35)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:144:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:72:25)",
+              "Stack.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack.js:363:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:76:31)",
+              "new Asset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/code.js:165:26)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:84:33)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/AssetParameters/7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7f77e012a41f9f6a9aed277f4e04fcb67db04a9da414e749970b3a60c4bd7ff9ArtifactHashA9079DCD",
+            "trace": [
+              "new FileAssetParameters (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:20:38)",
+              "LegacyStackSynthesizer.doAddFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:144:22)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:72:25)",
+              "Stack.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack.js:363:33)",
+              "LegacyStackSynthesizer.addFileAsset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:76:31)",
+              "new Asset (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:40:44)",
+              "AssetCode.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/code.js:165:26)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:84:33)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoCreateFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoCreateFunctionServiceRoleE08C9518",
+            "trace": [
+              "new Role (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:66:35)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoCreateFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoCreateFunctionServiceRoleDefaultPolicy605F218A",
+            "trace": [
+              "new Policy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Table.combinedGrant (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:230:35)",
+              "Table.grantReadWriteData (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:141:21)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoCreateFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoCreateFunction29C0D7EB",
+            "trace": [
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:115:26)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoGetFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoGetFunctionServiceRoleDE809B09",
+            "trace": [
+              "new Role (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:66:35)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoGetFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoGetFunctionServiceRoleDefaultPolicy99709116",
+            "trace": [
+              "new Policy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Table.combinedGrant (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:230:35)",
+              "Table.grantReadWriteData (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:141:21)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoGetFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoGetFunction382E41FA",
+            "trace": [
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:115:26)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoUpdateFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoUpdateFunctionServiceRoleA3E42712",
+            "trace": [
+              "new Role (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:66:35)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoUpdateFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoUpdateFunctionServiceRoleDefaultPolicy9FF2CBC7",
+            "trace": [
+              "new Policy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Table.combinedGrant (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:230:35)",
+              "Table.grantReadWriteData (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:141:21)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoUpdateFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoUpdateFunction6CA51568",
+            "trace": [
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:115:26)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoDeleteFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoDeleteFunctionServiceRole2E2FB50F",
+            "trace": [
+              "new Role (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:66:35)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoDeleteFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoDeleteFunctionServiceRoleDefaultPolicy2B5C0290",
+            "trace": [
+              "new Policy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/policy.js:46:26)",
+              "Role.addToPrincipalPolicy (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Table.combinedGrant (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:230:35)",
+              "Table.grantReadWriteData (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-dynamodb/lib/table.js:141:21)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoDeleteFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoDeleteFunction33D65E9C",
+            "trace": [
+              "new Function (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function.js:115:26)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApi145E2E30",
+            "trace": [
+              "new RestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:324:26)",
+              "new LambdaRestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.js:21:9)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiCloudWatchRoleE8187653",
+            "trace": [
+              "new Role (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "LambdaRestApi.configureCloudWatchRole (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:202:22)",
+              "new RestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:340:18)",
+              "new LambdaRestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.js:21:9)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiAccount82C4A65C",
+            "trace": [
+              "LambdaRestApi.configureCloudWatchRole (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:206:26)",
+              "new RestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:340:18)",
+              "new LambdaRestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.js:21:9)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiDeployment88898756809b5c43ba94dc514605ade136e00d3f",
+            "trace": [
+              "new Deployment (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/deployment.js:44:25)",
+              "LambdaRestApi.configureDeployment (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:217:38)",
+              "new RestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:342:14)",
+              "new LambdaRestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.js:21:9)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiDeploymentStageprod8FC2974F",
+            "trace": [
+              "new Stage (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/stage.js:59:26)",
+              "LambdaRestApi.configureDeployment (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:225:36)",
+              "new RestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:342:14)",
+              "new LambdaRestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.js:21:9)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiEndpointC1E16B6C",
+            "trace": [
+              "LambdaRestApi.configureDeployment (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:229:13)",
+              "new RestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/restapi.js:342:14)",
+              "new LambdaRestApi (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/lambda-api.js:21:9)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:49",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "Kernel._create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7934:26)",
+              "Kernel.create (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7678:21)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/ANY/ApiPermission.cdklambdadynamodbTodoApi54673AE0.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiANYApiPermissioncdklambdadynamodbTodoApi54673AE0ANY693F16C4",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:38:22)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "RootResource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/ANY/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiANYApiPermissionTestcdklambdadynamodbTodoApi54673AE0ANY3184B9AA",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:45:26)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "RootResource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApiANY0FB9F7F5",
+            "trace": [
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:55:26)",
+              "RootResource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodos175F9392",
+            "trace": [
+              "new Resource (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:214:26)",
+              "RootResource.addResource (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:24:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/GET/ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosGETApiPermissioncdklambdadynamodbTodoApi54673AE0GETtodosF6557F31",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:38:22)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/GET/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosGETApiPermissionTestcdklambdadynamodbTodoApi54673AE0GETtodos6ADDD628",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:45:26)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosGETE281246C",
+            "trace": [
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:55:26)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/POST/ApiPermission.cdklambdadynamodbTodoApi54673AE0.POST..todos": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosPOSTApiPermissioncdklambdadynamodbTodoApi54673AE0POSTtodosFBDB5AFB",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:38:22)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/POST/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.POST..todos": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosPOSTApiPermissionTestcdklambdadynamodbTodoApi54673AE0POSTtodosFE08A663",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:45:26)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosPOSTE91981ED",
+            "trace": [
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:55:26)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosid09742A9C",
+            "trace": [
+              "new Resource (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:214:26)",
+              "Resource.addResource (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:24:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET/ApiPermission.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidGETApiPermissioncdklambdadynamodbTodoApi54673AE0GETtodosid20BC7171",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:38:22)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.GET..todos.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidGETApiPermissionTestcdklambdadynamodbTodoApi54673AE0GETtodosid0F05D59D",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:45:26)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidGETE6074B06",
+            "trace": [
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:55:26)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT/ApiPermission.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidPUTApiPermissioncdklambdadynamodbTodoApi54673AE0PUTtodosid8CCC538A",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:38:22)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.PUT..todos.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidPUTApiPermissionTestcdklambdadynamodbTodoApi54673AE0PUTtodosidAC60FBCC",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:45:26)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/PUT/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidPUT1EDDB427",
+            "trace": [
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:55:26)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE/ApiPermission.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidDELETEApiPermissioncdklambdadynamodbTodoApi54673AE0DELETEtodosid1CDCDECC",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:38:22)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE/ApiPermission.Test.cdklambdadynamodbTodoApi54673AE0.DELETE..todos.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidDELETEApiPermissionTestcdklambdadynamodbTodoApi54673AE0DELETEtodosid33B844B7",
+            "trace": [
+              "Function.addPermission (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-lambda/lib/function-base.js:37:9)",
+              "LambdaIntegration.bind (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.js:45:26)",
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:39:40)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/TodoApi/Default/todos/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TodoApitodosidDELETE9930E3F2",
+            "trace": [
+              "new Method (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/method.js:55:26)",
+              "Resource.addMethod (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/aws-apigateway/lib/resource.js:30:16)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/cdk-lambda-dynamodb/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/synthesis.js:127:9",
+              "visit (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/synthesis.js:181:9)",
+              "visit (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/synthesis.js:178:9)",
+              "injectMetadataResources (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/synthesis.js:116:5)",
+              "Object.synthesize (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/private/synthesis.js:16:5)",
+              "App.synth (/private/var/folders/9s/t_jgls0j0ts9xp4kmmpb884m0000gn/T/jsii-kernel-sMr2No/node_modules/@aws-cdk/core/lib/stage.js:82:41)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:51",
+              "Kernel._wrapSandboxCode (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8419:20)",
+              "/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7758:25",
+              "Kernel._ensureSync (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:8395:20)",
+              "Kernel.invoke (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7757:26)",
+              "KernelHost.processRequest (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7458:28)",
+              "KernelHost.run (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7396:14)",
+              "Immediate._onImmediate (/Users/stevedepp/Documents/Personal/MSDS/498/week 06/cfex/cdk-lambda-dynamodb-fargate/.env/lib/python3.8/site-packages/jsii/_embedded/jsii/jsii-runtime.js:7399:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
