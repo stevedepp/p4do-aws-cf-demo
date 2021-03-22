@@ -1,5 +1,10 @@
 # p4do-aws-cf-demo
-AWS CloudFormation demo from Noah Gift's Python for DevOps book
+Serverless AI Data Engineering Pipeline via: 
+- [x] AWS consoles 
+- [x] AWS CLI 
+- [x] AWS SDK (Boto)
+- [x] AWS Serverless Application Model
+- [ ] AWS CloudFormation
 
 please click the demo video to hear sound.
 
