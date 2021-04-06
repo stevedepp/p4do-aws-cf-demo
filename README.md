@@ -14,8 +14,7 @@ Please click the video to hear sound or follow along with the transcript that's 
 #
 
 > Hello everyone. Thank you for watching. This video is less a demo and more an update. I have been working on project 4 which builds a serverless ai data engineering pipeline. 3 weeks ago, I completed the building of this project infrastruture
-using the AWS service consoles to create 6 objects: a dynamoDB table called fang shown here on the left in the middle of the page, an eventbridge event named 5 minute timer that triggers a lambda function called serverlessproducer that gets from fang and gives to a simple queue service, a second lambda function called producerai that is triggered by SQS entries 
-and gives to AWS comprehend to process, and finally over to S3 for retrieval. 
+using the AWS service consoles to create 6 objects: a dynamoDB table called 'fang', shown here on the left in the middle of the page; an eventbridge event, named '5 minute timer', that triggers a lambda function, called 'serverlessproducer', that gets from 'fang' and gives to a simple queue service; a second lambda function, called 'producerai', that is triggered by SQS entries and gives to AWS comprehend to process, and finally over to S3 for retrieval. 
 
 **Demo Video 6**
 
@@ -73,7 +72,7 @@ fang —> 5minutetimer —> serverlessproducer —> producer —> producerai —
 
 #
 
-> I implemented the same via a combination of AWS command line interface, AWS SDK for python aka boto3 and AWS serverless application model.  I was pretty happy that I could learn proficiency in these environments in a week, but I hit a hiccup in getting one of my lambdas some visibility.  This hiccup reveals a weakness of this form of IAC. In this form of IAC, I am dependent on the procedural nature of python.  In other words, I gain leverage via code and so my building takes 3 minutes not 24, but to get it done I must tell my 5 minute timer to look at serverless producer and serverless producer to see 5 minute timer.
+> ... I implemented the same via a combination of AWS command line interface, AWS SDK for python, aka 'boto3', and AWS serverless application model.  I was pretty happy that I could learn proficiency in these environments in a week, but I hit a hiccup in getting one of my lambdas some visibility.  This hiccup reveals a weakness of this form of IAC. In this form of IAC, I am dependent on the procedural nature of python.  In other words, I gain leverage via code and so my building takes 3 minutes not 24, but to get it done I must tell my 5 minute timer to look at serverless producer and serverless producer to see 5 minute timer.
 
 ### Serverless AI Data Engineering Pipeline
 ### Quick update
@@ -107,7 +106,7 @@ fang —>             5minutetimer —> serverlessproducer —> producer —> pr
 
 #
 
-> This  brings us to this week where I've been working with CloudFormation which transitions from python’s procedural orieintation to more of an object orientation. In some ways, this is a shift from imperative programming to declarative programming: I state via templates what objects object attributes and object methods I want, and I leave it to the cloud service provider to hook everything up.  The good thing is this will improve my productivity.  It may still take 3 minutes to build the infrastructure, but less time to write the code that does that.  This frees me up to create a command line tool and an API to interface the user.  So my focus shifts from the solution to the customer.  It still leaves me vulnerable to the cloud service provider for procedural implementation, but that provides me significant leverage with respect to time and code, and because its a form of abstraction, I might be more capable of shifting from AWS to GCP and Azure.  So, this time next week, I will have cloud formation done and hoping to spend the remaining weeks on encryption, IAM role tightening, and other aspects of the project.
+> This  brings us to this week where I've been working with CloudFormation which transitions from python’s procedural orieintation to more of an object orientation. In some ways, this is a shift from imperative programming to declarative programming: I state via templates what objects object attributes and object methods I want, and I leave it to the cloud service provider to hook everything up.  The good thing is this will improve my productivity.  It may still take 3 minutes to build the infrastructure, but less time to write the code that does that.  This frees me up to create a command line tool and an API to interface the user.  So my focus shifts from the solution to the customer.  It still leaves me vulnerable to the cloud service provider for procedural implementation, but that provides me significant leverage with respect to time and code, and because its a form of abstraction, I might be more capable of shifting from AWS to GCP and Azure.  So, this time next week, I will have cloud formation done and hoping to spend the remaining weeks on encryption, IAM role tightening, and other aspects of the project.  Thank you very much for watching. 
 
 ### Serverless AI Data Engineering Pipeline
 ### Quick update
