@@ -1,4 +1,7 @@
-# p4do-aws-cf-demo
+## MSDS 498 final project demo video for week 6: *Quick update*
+
+Please click the video to hear sound or follow along with the transcript that's set just below the video.
+
 Serverless AI Data Engineering Pipeline via: 
 - [x] AWS consoles 
 - [x] AWS CLI 
