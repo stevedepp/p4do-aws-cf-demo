@@ -117,19 +117,16 @@ fang —>             5minutetimer —> serverlessproducer —> producer —> pr
 - [ ] command line tool: click & flask
 - [ ] GCP
 
-|Imperative             |Declarative                    |
-|--:                    |--:                            |           
-|procedural orientation | object orientation            | 
-|coded steps		 		    | classes of objects that exist |
-							cloud service provider for procedures
+|Imperative             |Declarative                          |
+|--:                    |--:                                  |           
+|procedural orientation |object orientation                   | 
+|coded steps            |classes of objects that exist        |
+|                       |cloud service provider for procedures|
 
-Project 4
+**Project 4**
 
-DynamoDB —> EventBridge —> Lambda —>                  SQS —>         Lambda —>     AWS comprehend —> S3
-fang —>             5minutetimer —> serverlessproducer —> producer —> producerai —> comprehend —>            fangsentiment-depp
-
+**DynamoDB —> EventBridge —> Lambda —> SQS —> Lambda —> AWS comprehend —> S3**   
+fang —> 5minutetimer —> serverlessproducer —> producer —> producerai —> comprehend —>            fangsentiment-depp
 
 <img width="423" alt="Al Data Engineering" src="https://user-images.githubusercontent.com/38410965/113652952-d3d75c80-9662-11eb-834d-3880404101a2.png">
-
-
 
