@@ -7,13 +7,10 @@ Serverless AI Data Engineering Pipeline via:
 - [x] AWS Serverless Application Model
 - [ ] AWS CloudFormation
 
-Please click the video to hear sound or follow along with the transcript that's set just below the video.
+Please unmute the video to hear sound or follow along with the transcript that's set just below the video.  Video resolution improves in full screen.
 
 <video src="https://user-images.githubusercontent.com/38410965/111997815-cd3cd700-8af1-11eb-96fb-467bb5673f18.mp4" autoplay controls loop muted style="max-width: 730px;">
 </video>
-
-
-![demo](https://user-images.githubusercontent.com/38410965/111997815-cd3cd700-8af1-11eb-96fb-467bb5673f18.mp4)
 
 #
 
